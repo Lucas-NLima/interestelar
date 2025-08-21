@@ -13,7 +13,7 @@
 
   <!-- Conteúdo por cima do fundo animado -->
   <div class="Titulo1">
-    <h1>🌎 Seja bem vindo ao desafio!!!</h1>
+    <h1> Mistérios do sistema solar!!!</h1>
     <p>Entre na nave para começar</p>
 
 <a href="interestelar/missao1.php"><button>Entrar</button></a>
