@@ -23,36 +23,46 @@ for (let i = 0; i < numStars; i++) {
   });
 }
 
-// ---------------- Planetas em órbita ----------------
+
+// ---------------- Planetas em órbita (com imagens) ----------------
 const planets = [
   {
     centerX: canvas.width / 2,
     centerY: canvas.height / 2,
     orbitRadius: 200,
     radius: 40,
-    color: "#3498db",
     angle: Math.random() * Math.PI * 2,
-    speed: 0.002
+    speed: 0.002,
+    img: loadImage("img/terra.png")
   },
   {
     centerX: canvas.width / 2,
     centerY: canvas.height / 2,
     orbitRadius: 350,
     radius: 60,
-    color: "#e74c3c",
     angle: Math.random() * Math.PI * 2,
-    speed: 0.0015
+    speed: 0.0015,
+    img: loadImage("img/marte.png")
   },
   {
     centerX: canvas.width / 2,
     centerY: canvas.height / 2,
     orbitRadius: 500,
     radius: 50,
-    color: "#f1c40f",
     angle: Math.random() * Math.PI * 2,
-    speed: 0.001
+    speed: 0.001,
+    img: loadImage("img/jupiter.png")
   }
 ];
+
+// Função para carregar imagens
+function loadImage(src) {
+  const img = new Image();
+  img.src = src;
+  return img;
+}
+
+
 
 // ---------------- Estrelas cadentes ----------------
 let shootingStars = [];
@@ -84,19 +94,18 @@ function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // Planetas em órbita
-  planets.forEach(p => {
-    p.angle += p.speed;
-    const x = p.centerX + p.orbitRadius * Math.cos(p.angle);
-    const y = p.centerY + p.orbitRadius * Math.sin(p.angle);
+  
+  // Planetas em órbita (com imagens)
+planets.forEach(p => {
+  p.angle += p.speed;
+  const x = p.centerX + p.orbitRadius * Math.cos(p.angle);
+  const y = p.centerY + p.orbitRadius * Math.sin(p.angle);
 
-    ctx.beginPath();
-    ctx.arc(x, y, p.radius, 0, Math.PI * 2);
-    ctx.fillStyle = p.color;
-    ctx.shadowColor = p.color;
-    ctx.shadowBlur = 40;
-    ctx.fill();
-    ctx.shadowBlur = 0;
-  });
+  if (p.img.complete) { // só desenha quando a imagem carregar
+    ctx.drawImage(p.img, x - p.radius, y - p.radius, p.radius * 2, p.radius * 2);
+  }
+});
+
 
   // Estrelas normais
   for (let i = 0; i < numStars; i++) {
