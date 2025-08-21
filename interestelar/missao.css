@@ -1,0 +1,192 @@
+
+
+
+/* ------------------------------ style.css ------------------------------ */
+:root{
+  --bg1: #030311;   /* céu profundo */
+  --bg2: #0b0b2a;   /* leve variação */
+  --glow1: #84c5ff; /* brilho azulado */
+  --glow2: #ffb3ec; /* brilho magenta */
+  --glow3: #ffeaa7; /* brilho amarelado */
+}
+
+/* Reset básico */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; background: radial-gradient(1200px 800px at 70% 20%, var(--bg2), var(--bg1)); overflow: hidden; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; }
+
+/* Container principal ocupando a tela toda */
+.galaxy {
+  position: fixed;
+  inset: 0;
+  isolation: isolate; /* para que os filtros não vazem */
+  background: radial-gradient(1000px 600px at 30% 80%, #090922, transparent 60%) no-repeat,
+              radial-gradient(800px 500px at 75% 30%, #0a0a1f, transparent 60%) no-repeat;
+}
+
+/* Camadas de estrelas (padrões diferentes para dar sensação de aleatoriedade) */
+.stars, .stars::before, .stars::after {
+  position: absolute; inset: -50% -50%; /* maior que a tela para permitir deslocamento */
+  content: ""; display: block;
+  background-repeat: repeat;
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  animation: drift linear infinite;
+}
+
+/* Primeira malha de estrelas: bem miúdas e densas */
+.stars1 { 
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, white 99%, transparent 100%),
+    radial-gradient(1px 1px at 30% 80%, white 99%, transparent 100%),
+    radial-gradient(1px 1px at 50% 50%, white 99%, transparent 100%),
+    radial-gradient(1px 1px at 70% 10%, white 99%, transparent 100%),
+    radial-gradient(1px 1px at 90% 70%, white 99%, transparent 100%);
+  background-size: 250px 250px, 320px 320px, 280px 280px, 360px 360px, 300px 300px;
+  animation-duration: 200s;
+  filter: drop-shadow(0 0 1px white);
+}
+.stars1::before{
+  background-image: radial-gradient(1px 1px at 15% 65%, white 99%, transparent 100%),
+                    radial-gradient(1px 1px at 85% 35%, white 99%, transparent 100%),
+                    radial-gradient(1px 1px at 45% 85%, white 99%, transparent 100%);
+  background-size: 260px 260px, 300px 300px, 340px 340px;
+  animation-duration: 260s;
+  opacity: .8;
+}
+.stars1::after{
+  background-image: radial-gradient(1px 1px at 25% 25%, white 99%, transparent 100%),
+                    radial-gradient(1px 1px at 65% 75%, white 99%, transparent 100%);
+  background-size: 220px 220px, 310px 310px;
+  animation-duration: 180s;
+  opacity: .6;
+}
+
+/* Segunda malha: estrelas um pouco maiores e mais raras (paralaxe) */
+.stars2 {
+  background-image:
+    radial-gradient(1.5px 1.5px at 20% 40%, rgba(255,255,255,.9) 99%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 75% 15%, rgba(255,255,255,.85) 99%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 70%, rgba(255,255,255,.9) 99%, transparent 100%);
+  background-size: 480px 480px, 520px 520px, 580px 580px;
+  animation-duration: 120s;
+  filter: drop-shadow(0 0 2px white);
+}
+
+/* Nebulosidade colorida suave (luz e gás) */
+.nebula {
+  position: absolute; inset: -10% -10%;
+  background:
+    radial-gradient(600px 400px at 35% 55%, rgba(132,197,255,.17), transparent 60%),
+    radial-gradient(500px 350px at 60% 45%, rgba(255,179,236,.14), transparent 60%),
+    radial-gradient(700px 500px at 50% 60%, rgba(255,234,167,.10), transparent 60%);
+  filter: blur(10px) saturate(120%);
+  animation: float 40s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+/* Núcleo brilhante (centro da galáxia) */
+.core {
+  position: absolute; inset: 0;
+  background: radial-gradient(closest-side at 50% 55%, rgba(255,255,255,.9), rgba(255,255,255,.5) 15%, rgba(255,255,255,.15) 35%, rgba(255,255,255,0) 55%),
+              radial-gradient(closest-side at 50% 55%, rgba(132,197,255,.35), rgba(132,197,255,0) 60%);
+  transform: translateZ(0);
+  filter: blur(1px) drop-shadow(0 0 12px rgba(255,255,255,.4));
+  animation: pulse 6s ease-in-out infinite;
+  pointer-events: none;
+  opacity: .7;
+}
+
+/* Braços espirais estilizados usando conic-gradient + máscara radial */
+.arms {
+  position: absolute; inset: -20%;
+  --armColor1: rgba(255,255,255,.06);
+  --armColor2: rgba(255,255,255,.02);
+  background:
+    conic-gradient(from 0deg,
+      var(--armColor1) 0 15deg,
+      transparent 15deg 45deg,
+      var(--armColor2) 45deg 60deg,
+      transparent 60deg 90deg,
+      var(--armColor1) 90deg 105deg,
+      transparent 105deg 135deg,
+      var(--armColor2) 135deg 150deg,
+      transparent 150deg 180deg,
+      var(--armColor1) 180deg 195deg,
+      transparent 195deg 225deg,
+      var(--armColor2) 225deg 240deg,
+      transparent 240deg 270deg,
+      var(--armColor1) 270deg 285deg,
+      transparent 285deg 315deg,
+      var(--armColor2) 315deg 330deg,
+      transparent 330deg 360deg
+    );
+  -webkit-mask: radial-gradient(closest-side, rgba(0,0,0,1) 0 55%, rgba(0,0,0,0) 75%);
+          mask: radial-gradient(closest-side, rgba(0,0,0,1) 0 55%, rgba(0,0,0,0) 75%);
+  filter: blur(12px) saturate(120%);
+  mix-blend-mode: screen;
+  transform-origin: 50% 55%;
+  animation: spin 120s linear infinite;
+  opacity: .8;
+}
+
+/* Cintilação de algumas estrelas maiores */
+.twinkle {
+  position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen;
+  background:
+    radial-gradient(3px 3px at 20% 30%, rgba(255,255,255,.9), transparent 60%),
+    radial-gradient(2px 2px at 65% 55%, rgba(255,255,255,.8), transparent 60%),
+    radial-gradient(2.5px 2.5px at 40% 75%, rgba(255,255,255,.85), transparent 60%);
+  animation: twinkle 3.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,.35));
+  opacity: .7;
+}
+
+@keyframes drift { to { transform: translate3d(20%, 10%, 0); } }
+@keyframes float { 0%,100% { transform: translate3d(0,0,0) } 50% { transform: translate3d(1.5%, -1%, 0) } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 0%,100% { opacity: .55; } 50% { opacity: .85; } }
+@keyframes twinkle { 0%,100% { opacity: .55; filter: drop-shadow(0 0 2px rgba(255,255,255,.25)); } 50% { opacity: 1; filter: drop-shadow(0 0 8px rgba(255,255,255,.55)); } }
+
+/* Acessibilidade: reduzir movimento se o usuário preferir */
+@media (prefers-reduced-motion: reduce) {
+  .stars, .nebula, .arms, .core, .twinkle { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* Conteúdo de demonstração (pode remover) */
+.content {
+  position: relative; z-index: 2; color: #e6e6ff; text-align: center;
+  top: 50%; transform: translateY(-50%);
+  text-shadow: 0 2px 16px rgba(132,197,255,.25);
+}
+.content h1 { font-weight: 800; letter-spacing: .02em; margin: 0 0 .25rem; }
+.content p { opacity: .85; margin: 0; }
+.badge { display: inline-block; margin-top: 1rem; padding: .35rem .6rem; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; backdrop-filter: blur(4px); background: rgba(10,10,30,.25); font-size: .9rem; }
+
+button.neon {
+  background: transparent;
+  border: 2px solid #84c5ff;       /* azul inicial */
+  color: #84c5ff;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 8px #84c5ff, 0 0 16px rgba(132,197,255,0.4);
+}
+
+/* efeito quando passa o mouse */
+button.neon:hover {
+  border-color: #ffb3ec;      /* muda borda */
+  color: #ffb3ec;             /* muda texto */
+  box-shadow: 0 0 10px #ffb3ec,
+              0 0 20px #ffb3ec,
+              0 0 40px #ffb3ec; /* brilho neon */
+  background: rgba(255, 179, 236, 0.1); /* fundo leve */
+}
+
+
