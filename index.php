@@ -16,7 +16,7 @@
     <h1> Mistérios do sistema solar!!!</h1>
     <p>Entre na nave para começar</p>
 
-<a href="interestelar/missao1.php"><button>Entrar</button></a>
+<a href="interestelar/missao1.php"><button>Iniciar...</button></a>
 
     <a href="mais-informacoes.html"><button>Mais informações</button></a>
   </div>
