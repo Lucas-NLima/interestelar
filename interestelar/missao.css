@@ -192,3 +192,13 @@ button.neon:hover {
               0 0 40px #ffb3ec; /* brilho neon */
   background: rgba(255, 179, 236, 0.1); /* fundo leve */
 }
+
+.resposta{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.texto{
+  color: red;
+}

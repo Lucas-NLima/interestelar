@@ -18,31 +18,32 @@
 
   <!-- seu conteúdo por cima do fundo -->
   <main class="conteudo">
-    <h1>Informe um número par, para liberar a informação sobre o planeta mais próximo do Sol (Mercúrio)</h1>
+    <h1>Informe um número par, para liberar a informação sobre o planeta mais próximo do Sol</h1>
     <h4>Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar o enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?.</h4>
-  
-     <label for="resposta">Resposta:</label>
-    <input type="text" name="resposta" id="resposta" required>
-    <button class="neon" type="submit">Enviar</button>
-  
-  </main>
-   <form method="POST">
+     <form class="resposta" method="POST">
         <input type="number" name="numero" required>
-        <button type="submit">Enviar</button>
+        <button class="neon" type="submit">Enviar</button>
     </form>
-</body>
-</html>
-
-<?php
+    <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $numero = $_POST['numero'];
 
     if ($numero % 2 == 0) {
-        echo "<h2>Mercúrio é o planeta mais próximo do Sol.</h2>";
+        echo "<h2 style = 'color : green;'>Mercúrio é o planeta mais próximo do Sol.</h2>";
+        echo"<button><a href='missao2.php'>Próxima missão</a>";
     } else {
-        echo "<h2>Por favor, insira um número par.</h2>";
+        echo "<h2 style = 'color : red;'>Por favor, insira um número par.</h2>";
     }
+
+
 } ?>
+  
+  </main>
+  
+</body>
+</html>
+
+
 
 
 
