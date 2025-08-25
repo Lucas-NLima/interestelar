@@ -18,8 +18,8 @@
 
   <!-- seu conteúdo por cima do fundo -->
   <main class="conteudo">
-    <h1>Seu site aqui</h1>
-    <p>Este texto está sobre a galáxia animada.</p>
+    <h1></h1>
+    <p></p>
   </main>
 </body>
 </html>
