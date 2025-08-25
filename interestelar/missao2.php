@@ -18,8 +18,8 @@
 
   <!-- seu conteúdo por cima do fundo -->
   <main class="conteudo">
-    <h1>Informe um número par, para liberar a informação sobre o planeta mais próximo do Sol</h1>
-    <h4>Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar o enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?.</h4>
+    <h1>Qual é o planeta conhecido como estrela d’alva, visível ao amanhecer?</h1>
+    <h4>Ao pousar em Vênus, você encontra uma porta dourada com inscrições antigas. Para destrancá-la, você deve responder corretamente à pergunta dos antigos exploradores</h4>
      <form class="resposta" method="POST">
         <input type="text" name="texto" required>
         <button class="neon" type="submit">Enviar</button>

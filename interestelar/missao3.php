@@ -18,14 +18,23 @@
 
   <!-- seu conteúdo por cima do fundo -->
   <main class="conteudo">
-    <h1>Informe um número par, para liberar a informação sobre o planeta mais próximo do Sol</h1>
-    <h4>Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar o enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?.</h4>
+    <h1>A senha é a posição da Terra no Sistema Solar (contando a partir do Sol)</h1>
+    <h4>A Terra, conhecida como o planeta azul, é o único que abriga vida, com oceanos, florestas e uma atmosfera rica em oxigênio. Lar da humanidade e de milhões de espécies, desafia os viajantes com enigmas que exigem raciocínio lógico e atenção aos detalhes para avançar na missão.</h4>
      <form class="resposta" method="POST">
         <input type="number" name="numero" required>
         <button class="neon" type="submit">Enviar</button>
     </form>
     
     <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+    $senha = $_POST['senha'];
+
+    if ($senha == 3) {
+        echo "<h2>Acesso liberado! Bem-vindo ao sistema.</h2>";
+    } else {
+        echo "<h2>Senha incorreta. Tente novamente!</h2>";
+    }
+}
     ?>
   
   </main>

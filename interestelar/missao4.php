@@ -18,14 +18,34 @@
 
   <!-- seu conteúdo por cima do fundo -->
   <main class="conteudo">
-    <h1>Informe um número par, para liberar a informação sobre o planeta mais próximo do Sol</h1>
-    <h4>Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar o enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?.</h4>
+    <h1>Um robô em Marte consumiu 3 litros de oxigênio (R$4 cada) e 2 litros de água (R$2 cada).
+Qual foi o gasto total?</h1>
+    <h4>Após deixar a Terra, sua nave atravessa o espaço e chega a Marte, o enigmático planeta vermelho. Frio e árido, ele guarda desertos imensos e o Monte Olimpo, a maior montanha do Sistema Solar. Agora, seus enigmas estarão ligados à exploração espacial e aos mistérios deste vizinho da Terra.</h4>
      <form class="resposta" method="POST">
-        <input type="number" name="numero" required>
+        <input type="number" name="total" required>
         <button class="neon" type="submit">Enviar</button>
     </form>
     
     <?php
+   if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $respostaUsuario = $_POST['total']; // valor que o usuário digitou
+
+    $litrosOxi = 3;
+    $valorOxi = 4;
+    $litrosAgua = 2;
+    $valorAgua = 2;
+
+    $totalOxi = $litrosOxi * $valorOxi;
+    $totalAgua = $litrosAgua * $valorAgua;
+
+    $respostaCorreta = $totalOxi + $totalAgua; // resultado certo = 16
+
+    if ($respostaUsuario == $respostaCorreta) {
+        echo "<h2>Resposta correta, Parabéns !!</h2>";
+    } else {
+        echo "<h2>Senha incorreta. Tente novamente!</h2>";
+    }
+}
     ?>
   
   </main>
