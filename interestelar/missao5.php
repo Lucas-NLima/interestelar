@@ -1,30 +1,25 @@
-<!-- index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fundo Animado da Galáxia • CSS puro</title>
-<link rel="stylesheet" href="missao.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="missao.css" />
+  <title>Fundo Galáxia (CSS-only)</title>
 </head>
 <body>
+  <div class="galaxia">
+    <div class="camada nebulosa"></div>
+    <div class="camada espiral"></div>
+    <div class="camada estrelas estrelas-a"></div>
+    <div class="camada estrelas estrelas-b"></div>
+    <div class="camada estrelas estrelas-c"></div>
+    <div class="camada brilho"></div>
+  </div>
 
-<div class="galaxy">
-<div class="stars stars1"></div>
-<div class="stars stars2"></div>
-<div class="nebula"></div>
-<div class="arms"></div>
-<div class="core"></div>
-<div class="twinkle"></div>
-</div>
-
-
-<main class="content" aria-hidden="true">
-<h2> Organize os planetas gasosos em ordem alfabética: Júpiter, Netuno, Saturno, Urano.</h2>
-<h4>Ao deixar Marte, a nave alcança Júpiter, o maior planeta do Sistema Solar. Um gigante gasoso marcado por tempestades intensas, como a Grande Mancha Vermelha, que traz enigmas à altura de sua grandiosidade</h4>
-<span class="badge"><button class="neon">Responder</button></span>
-</main>
-
-
+  <!-- seu conteúdo por cima do fundo -->
+  <main class="conteudo">
+    <h1>Seu site aqui</h1>
+    <p>Este texto está sobre a galáxia animada.</p>
+  </main>
 </body>
 </html>

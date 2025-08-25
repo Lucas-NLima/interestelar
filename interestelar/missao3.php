@@ -1,30 +1,25 @@
-<!-- index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fundo Animado da Galáxia • CSS puro</title>
-<link rel="stylesheet" href="missao.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="missao.css" />
+  <title>Fundo Galáxia (CSS-only)</title>
 </head>
 <body>
-    
-<div class="galaxy">
-<div class="stars stars1"></div>
-<div class="stars stars2"></div>
-<div class="nebula"></div>
-<div class="arms"></div>
-<div class="core"></div>
-<div class="twinkle"></div>
-</div>
+  <div class="galaxia">
+    <div class="camada nebulosa"></div>
+    <div class="camada espiral"></div>
+    <div class="camada estrelas estrelas-a"></div>
+    <div class="camada estrelas estrelas-b"></div>
+    <div class="camada estrelas estrelas-c"></div>
+    <div class="camada brilho"></div>
+  </div>
 
-
-<main class="content" aria-hidden="true">
-<h2>A senha é a posição da Terra no Sistema Solar (contando a partir do Sol).</h2>
-<p>A Terra, conhecida como o planeta azul, é o único que abriga vida, com oceanos, florestas e uma atmosfera rica em oxigênio. Lar da humanidade e de milhões de espécies, desafia os viajantes com enigmas que exigem raciocínio lógico e atenção aos detalhes para avançar na missão.</p>
-<span class="badge"><button class="neon">Responder</button></span>
-</main>
-
-
+  <!-- seu conteúdo por cima do fundo -->
+  <main class="conteudo">
+    <h1>Seu site aqui</h1>
+    <p>Este texto está sobre a galáxia animada.</p>
+  </main>
 </body>
 </html>
