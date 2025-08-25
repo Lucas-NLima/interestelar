@@ -18,8 +18,17 @@
 
   <!-- seu conteúdo por cima do fundo -->
   <main class="conteudo">
-    <h1>Seu site aqui</h1>
-    <p>Este texto está sobre a galáxia animada.</p>
+    <h1>Informe um número par, para liberar a informação sobre o planeta mais próximo do Sol</h1>
+    <h4>Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar o enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?.</h4>
+     <form class="resposta" method="POST">
+        <input type="number" name="numero" required>
+        <button class="neon" type="submit">Enviar</button>
+    </form>
+    
+    <?php
+    ?>
+  
   </main>
+  
 </body>
 </html>
