@@ -26,10 +26,18 @@
     </form>
     
     <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $planeta = strtolower(trim($_POST['planeta']));
+
+    if ($planeta === 'vênus' || $planeta === 'venus') {
+        echo "<h2>Correto! Vênus é conhecido como estrela d’alva.</h2>";
+    } else {
+        echo "<h2>Resposta incorreta. Tente novamente!</h2>";
+    }
+}
     ?>
   
   </main>
-  
 </body>
 </html>
 
