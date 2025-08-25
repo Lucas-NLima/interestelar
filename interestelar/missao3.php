@@ -21,7 +21,7 @@
     <h1>A senha é a posição da Terra no Sistema Solar (contando a partir do Sol)</h1>
     <h4>A Terra, conhecida como o planeta azul, é o único que abriga vida, com oceanos, florestas e uma atmosfera rica em oxigênio. Lar da humanidade e de milhões de espécies, desafia os viajantes com enigmas que exigem raciocínio lógico e atenção aos detalhes para avançar na missão.</h4>
      <form class="resposta" method="POST">
-        <input type="number" name="numero" required>
+        <input type="number" name="senha" required>
         <button class="neon" type="submit">Enviar</button>
     </form>
     
