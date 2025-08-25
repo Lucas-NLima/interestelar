@@ -18,8 +18,17 @@
 
   <!-- seu conteúdo por cima do fundo -->
   <main class="conteudo">
-    <h1>Informe um número par para liberar a informação sobre o planeta mais próximo do Sol (Mercúrio)</h1>
+    <h1>Informe um número par, para liberar a informação sobre o planeta mais próximo do Sol (Mercúrio)</h1>
     <h4>Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar o enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?.</h4>
+  
+     <label for="resposta">Resposta:</label>
+    <input type="text" name="resposta" id="resposta" required>
+    <button class="neon" type="submit">Enviar</button>
+  
   </main>
 </body>
 </html>
+
+
+
+

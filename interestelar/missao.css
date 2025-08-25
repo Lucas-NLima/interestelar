@@ -166,3 +166,29 @@ body {
   from { background-position: 0 0,   0 0; }
   to   { background-position: 2200px -1600px, -2000px 1400px; }
 }
+
+button.neon {
+  background: transparent;
+  border: 2px solid #84c5ff;       /* azul inicial */
+  color: #84c5ff;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 8px #84c5ff, 0 0 16px rgba(132,197,255,0.4);
+}
+
+/* efeito quando passa o mouse */
+button.neon:hover {
+  border-color: #ffb3ec;      /* muda borda */
+  color: #ffb3ec;             /* muda texto */
+  box-shadow: 0 0 10px #ffb3ec,
+              0 0 20px #ffb3ec,
+              0 0 40px #ffb3ec; /* brilho neon */
+  background: rgba(255, 179, 236, 0.1); /* fundo leve */
+}
