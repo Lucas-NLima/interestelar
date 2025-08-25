@@ -18,4 +18,24 @@ public function missao2($planeta) {
     }
 }
 
+public function missao3($senha) {
+    if ($senha == 3) {
+        return "Acesso liberado! Bem-vindo ao sistema.";
+    } else {
+        return "Senha incorreta. Tente novamente!";
+    }
+}
+
+public function missao4($litrosOxi, $litrosAgua) {
+    $custoOxi = 4; // Custo por litro de oxigênio
+    $custoAgua = 2; // Custo por litro de água
+
+    $totalOxi = $litrosOxi * $custoOxi;
+    $totalAgua = $litrosAgua * $custoAgua;
+
+    $gastoTotal = $totalOxi + $totalAgua;
+
+    return "O gasto total foi: R$ " . number_format($gastoTotal, 2, ',', '.');
+}
+
 } ?>
