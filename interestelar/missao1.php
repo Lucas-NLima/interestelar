@@ -18,8 +18,8 @@
 
   <!-- seu conteúdo por cima do fundo -->
   <main class="conteudo">
-    <h1></h1>
-    <p></p>
+    <h1>Informe um número par para liberar a informação sobre o planeta mais próximo do Sol (Mercúrio)</h1>
+    <h4>Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar o enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?.</h4>
   </main>
 </body>
 </html>
