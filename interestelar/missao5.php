@@ -1,16 +1,36 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Missao5</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fundo Animado da Galáxia • CSS puro</title>
+<link rel="stylesheet" href="missao.css" />
 </head>
 <body>
-    <h1>Organize os planetas gasosos em ordem alfabética: Júpiter, Netuno, Saturno, Urano.</h1>
+<<<<<<< HEAD
+<div class="galaxy">
+<div class="stars stars1"></div>
+<div class="stars stars2"></div>
+<div class="nebula"></div>
+<div class="arms"></div>
+<div class="core"></div>
+<div class="twinkle"></div>
+</div>
+
+
+<main class="content" aria-hidden="true">
+    
 
 
 
-    <h3>Parabens voce concluio o questionario.</h3>
-    <a href="resultado.php"> <button>Ver resultados...</button></a>
+
+<h2> “Informe um número par para liberar a informação sobre o planeta mais próximo do Sol (Mercúrio).”</h2>
+
+<p>1 -Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar o enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?”</p>
+<span class="badge"><button class="neon">Responder</button></span>
+</main>
+
+
 </body>
 </html>
