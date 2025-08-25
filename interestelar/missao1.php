@@ -33,6 +33,16 @@
 </body>
 </html>
 
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $numero = $_POST['numero'];
+
+    if ($numero % 2 == 0) {
+        echo "<h2>Mercúrio é o planeta mais próximo do Sol.</h2>";
+    } else {
+        echo "<h2>Por favor, insira um número par.</h2>";
+    }
+} ?>
 
 
 
