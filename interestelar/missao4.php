@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="missao.css" />
 </head>
 <body>
-<<<<<<< HEAD
+
 <div class="galaxy">
 <div class="stars stars1"></div>
 <div class="stars stars2"></div>
@@ -20,14 +20,8 @@
 
 
 <main class="content" aria-hidden="true">
-    
-
-
-
-
-<h2> “Informe um número par para liberar a informação sobre o planeta mais próximo do Sol (Mercúrio).”</h2>
-
-<p>1 -Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar o enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?”</p>
+<h2> Um robô em Marte consumiu 3 litros de oxigênio (R$4 cada) e 2 litros de água (R$2 cada). <br> Qual foi o gasto total?</h2>
+<h4>Após deixar a Terra, sua nave atravessa o espaço e chega a Marte, o enigmático planeta vermelho. Frio e árido, ele guarda desertos imensos e o Monte Olimpo, a maior montanha do Sistema Solar. Agora, seus enigmas estarão ligados à exploração espacial e aos mistérios deste vizinho da Terra.</h4>
 <span class="badge"><button class="neon">Responder</button></span>
 </main>
 

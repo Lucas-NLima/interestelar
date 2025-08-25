@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="missao.css" />
 </head>
 <body>
-<<<<<<< HEAD
+
 <div class="galaxy">
 <div class="stars stars1"></div>
 <div class="stars stars2"></div>
@@ -20,14 +20,8 @@
 
 
 <main class="content" aria-hidden="true">
-    
-
-
-
-
-<h2> “Informe um número par para liberar a informação sobre o planeta mais próximo do Sol (Mercúrio).”</h2>
-
-<p>1 -Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar o enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?”</p>
+<h2> Organize os planetas gasosos em ordem alfabética: Júpiter, Netuno, Saturno, Urano.</h2>
+<h4>Ao deixar Marte, a nave alcança Júpiter, o maior planeta do Sistema Solar. Um gigante gasoso marcado por tempestades intensas, como a Grande Mancha Vermelha, que traz enigmas à altura de sua grandiosidade</h4>
 <span class="badge"><button class="neon">Responder</button></span>
 </main>
 

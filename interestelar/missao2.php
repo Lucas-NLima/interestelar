@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Fundo Animado da Galáxia • CSS puro</title>
-<link rel="stylesheet" href="missao.css" />
+  <link rel="stylesheet" href="missao.css" />
 </head>
 <body>
 
@@ -19,10 +19,8 @@
 </div>
 
 <main class="content" aria-hidden="true">
-
-<h2> “Informe um número par para liberar a informação sobre o planeta mais próximo do Sol (Mercúrio).”</h2>
-
-<p>1 -Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar o enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?”</p>
+<h1> Qual é o planeta conhecido como estrela d’alva, visível ao amanhecer?</h1>
+<h4>Ao pousar em Vênus, você encontra uma porta dourada com inscrições antigas. Para destrancá-la, você deve responder corretamente à pergunta dos antigos exploradores</h4>
 <span class="badge"><button class="neon">Responder</button></span>
 </main>
 

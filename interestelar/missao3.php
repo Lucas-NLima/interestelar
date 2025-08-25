@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="missao.css" />
 </head>
 <body>
-<<<<<<< HEAD
+    
 <div class="galaxy">
 <div class="stars stars1"></div>
 <div class="stars stars2"></div>
@@ -20,14 +20,8 @@
 
 
 <main class="content" aria-hidden="true">
-    
-
-
-
-
-<h2> “Informe um número par para liberar a informação sobre o planeta mais próximo do Sol (Mercúrio).”</h2>
-
-<p>1 -Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar o enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?”</p>
+<h2>A senha é a posição da Terra no Sistema Solar (contando a partir do Sol).</h2>
+<p>A Terra, conhecida como o planeta azul, é o único que abriga vida, com oceanos, florestas e uma atmosfera rica em oxigênio. Lar da humanidade e de milhões de espécies, desafia os viajantes com enigmas que exigem raciocínio lógico e atenção aos detalhes para avançar na missão.</p>
 <span class="badge"><button class="neon">Responder</button></span>
 </main>
 
