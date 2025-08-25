@@ -21,7 +21,7 @@
     <h1>Informe um número par, para liberar a informação sobre o planeta mais próximo do Sol</h1>
     <h4>Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar o enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?.</h4>
      <form class="resposta" method="POST">
-        <input type="letter" name="letra" required>
+        <input type="text" name="texto" required>
         <button class="neon" type="submit">Enviar</button>
     </form>
     
