@@ -30,9 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($numero % 2 == 0) {
         echo "<h2 style = 'color : green;'>Mercúrio é o planeta mais próximo do Sol.</h2>";
-        echo"<button><a href='missao2.php'>Próxima missão</a>";
+        echo"<button class = 'neon'><a href='missao2.php'>Próxima missão</a></button>";
     } else {
-        echo "<h2 style = 'color : red;'>Por favor, insira um número par.</h2>";
+        echo "<h2 style = 'color : red;'>❌ Por favor, insira um número par.</h2>";
     }
 
 
