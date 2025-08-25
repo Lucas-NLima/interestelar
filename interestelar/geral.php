@@ -2,7 +2,7 @@
 
  class Geral {
 
-public function Atividade1($numeroPar) {
+public function missao1($numeroPar) {
     if ($numeroPar % 2 == 0) {
         return "Mercúrio é o planeta mais próximo do Sol.";
     } else {
