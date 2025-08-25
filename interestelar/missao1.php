@@ -26,6 +26,10 @@
     <button class="neon" type="submit">Enviar</button>
   
   </main>
+   <form method="POST">
+        <input type="number" name="numero" required>
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>
 
