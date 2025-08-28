@@ -1,3 +1,48 @@
+
+/* parte da animação (foguete) --------------------------------------------------------------------------------------------------------------- */ 
+#transition {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  visibility: hidden; 
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  z-index: 9999; /* fica por cima de tudo */
+}
+
+.rocket {
+  font-size: 4rem;
+  position: absolute;
+  bottom: 20px;
+  animation: none;
+}
+
+.earth {
+  font-size: 6rem;
+  position: absolute;
+  top: 40px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 1s, transform 1s;
+}
+
+@keyframes fly {
+  0% { bottom: 20px; }
+  100% { bottom: 80%; }
+}
+
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
 /* ===== Reset básico ===== */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
@@ -150,9 +195,9 @@ body {
   50%      { opacity: .75; filter: blur(1.2px); }
 }
 @keyframes cintilar {
-  0%   { opacity: .6; filter: drop-shadow(0 0 1px rgba(255,255,255,.25)); }
-  50%  { opacity: 1;  filter: drop-shadow(0 0 3px rgba(255,255,255,.45)); }
-  100% { opacity: .7; filter: drop-shadow(0 0 2px rgba(255,255,255,.35)); }
+  0%   { opacity: .6; filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.13)); }
+  50%  { opacity: 1;  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.219)); }
+  100% { opacity: .7; filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.144)); }
 }
 @keyframes deslizar-a {
   from { background-position: 0 0,   0 0; }
@@ -199,6 +244,45 @@ button.neon:hover {
   flex-direction: column;
 }
 
-.texto{
-  color: red;
+/* aqui é a parte da transição (foguete) também --------------------------------------------------------------------------------------------------------------- */
+/* ===== Transição Foguete com imagens ===== */
+#transition {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  visibility: hidden; 
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  z-index: 9999;
 }
+
+.rocket {
+  width: 110px;   /* tamanho do foguete */
+  position: absolute;
+  bottom: 20px;
+  animation: none;
+  z-index: 1; /* 🌍 fica atrás */ 
+}
+
+.earth {
+  width: 400px;   /* tamanho da Terra */
+  position: absolute;
+  top: 40px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 1s, transform 1s;
+  z-index: 2; /* 🚀 sempre na frente */
+}
+
+@keyframes fly {
+  0% { bottom: 20px; }
+  100% { bottom: 80%; }
+}
+
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------- */

@@ -42,7 +42,11 @@ Qual foi o gasto total?</h1>
 
     if ($respostaUsuario == $respostaCorreta) {
         echo "<h2 style = 'color : green;'>Resposta correta, Parabéns !!</h2>";
-        echo"<button class = 'neon'><a href='missao5.php'>Próxima missão</a></button>";
+            echo "<script>
+              setTimeout(() => {
+                startTransition();
+              }, 500);
+            </script>";
     } else {
         echo "<h2 style = 'color : red;'>❌ Senha incorreta. Tente novamente!</h2>";
     }
@@ -50,6 +54,13 @@ Qual foi o gasto total?</h1>
     ?>
   
   </main>
+       <!-- 🚀 Tela de transição -->
+   <div id="transition">
+    <img src="../img/foguete.png" alt="Foguete" class="rocket">
+    <img src="../img/marte.png" alt="Terra" class="earth">
+  </div>
+  
+  <script src="script4.js"></script>
   
 </body>
 </html>

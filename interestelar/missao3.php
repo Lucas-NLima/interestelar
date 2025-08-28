@@ -31,7 +31,11 @@
 
     if ($senha == 3) {
         echo "<h2 style = 'color : green;'>Acesso liberado! Bem-vindo ao sistema.</h2>";
-        echo"<button class = 'neon'><a href='missao4.php'>Próxima missão</a></button>";
+         echo "<script>
+              setTimeout(() => {
+                startTransition();
+              }, 500);
+            </script>";
     } else {
         echo "<h2 style = 'color : red;'>❌ Senha incorreta. Tente novamente!</h2>";
     }
@@ -39,6 +43,13 @@
     ?>
   
   </main>
+     <!-- 🚀 Tela de transição -->
+  <div id="transition">
+    <img src="../img/foguete.png" alt="Foguete" class="rocket">
+    <img src="../img/terra.png" alt="Terra" class="earth">
+  </div>
+  
+  <script src="script3.js"></script>
   
 </body>
 </html>

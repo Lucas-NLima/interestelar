@@ -19,7 +19,7 @@
   <!-- seu conteúdo por cima do fundo -->
   <main class="conteudo">
     <h1>Qual é o planeta conhecido como estrela d’alva, visível ao amanhecer?</h1>
-    <h4>Ao pousar em Vênus, você encontra uma porta dourada com inscrições antigas. Para destrancá-la, você deve responder corretamente à pergunta dos antigos exploradores</h4>
+    <h4>Ao  você encontra uma porta dourada com inscrições antigas. Para destrancá-la, você deve responder corretamente à pergunta dos antigos exploradores</h4>
      <form class="resposta" method="POST">
         <input type="text" name="texto" required>
         <button class="neon" type="submit">Enviar</button>
@@ -30,8 +30,13 @@
     $planeta = strtolower(trim($_POST['texto']));
 
     if ($planeta === 'vênus' || $planeta === 'venus') {
-        echo "<h2 style = 'color : green;'>✅ Correto! Vênus é conhecido como estrela d’alva.</h2>";
-        echo"<button class = 'neon'><a href='missao3.php'>Próxima missão</a></button>";
+        echo "<h2 style = 'color : green;'>✅ Correto! Vênus é conhecido como estrela d’alva.</h2>";;
+         // dispara a animação via JS
+            echo "<script>
+              setTimeout(() => {
+                startTransition();
+              }, 500);
+            </script>";
     } else {
         echo "<h2 style = 'color : red;'>❌ Resposta incorreta. Tente novamente! (34690)</h2>";
         echo "<table border='1'>
@@ -61,6 +66,16 @@
     ?>
   
   </main>
+
+    <!-- 🚀 Tela de transição -->
+  <div id="transition">
+    <img src="../img/foguete.png" alt="Foguete" class="rocket">
+    <img src="../img/venus.png" alt="Terra" class="earth">
+  </div>
+  
+  <script src="script2.js"></script>
+
+
 </body>
 </html>
 
