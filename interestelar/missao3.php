@@ -30,9 +30,10 @@
     $senha = $_POST['senha'];
 
     if ($senha == 3) {
-        echo "<h2>Acesso liberado! Bem-vindo ao sistema.</h2>";
+        echo "<h2 style = 'color : green;'>Acesso liberado! Bem-vindo ao sistema.</h2>";
+        echo"<button class = 'neon'><a href='missao4.php'>Próxima missão</a></button>";
     } else {
-        echo "<h2>Senha incorreta. Tente novamente!</h2>";
+        echo "<h2 style = 'color : red;'>❌ Senha incorreta. Tente novamente!</h2>";
     }
 }
     ?>

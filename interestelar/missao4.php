@@ -41,9 +41,10 @@ Qual foi o gasto total?</h1>
     $respostaCorreta = $totalOxi + $totalAgua; // resultado certo = 16
 
     if ($respostaUsuario == $respostaCorreta) {
-        echo "<h2>Resposta correta, Parabéns !!</h2>";
+        echo "<h2 style = 'color : green;'>Resposta correta, Parabéns !!</h2>";
+        echo"<button class = 'neon'><a href='missao5.php'>Próxima missão</a></button>";
     } else {
-        echo "<h2>Senha incorreta. Tente novamente!</h2>";
+        echo "<h2 style = 'color : red;'>❌ Senha incorreta. Tente novamente!</h2>";
     }
 }
     ?>
