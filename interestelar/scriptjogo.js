@@ -5,12 +5,30 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const scoreEl = document.getElementById("score");
+const livesEl = document.getElementById("lives");
 const gameOverEl = document.getElementById("gameOver");
 const shootSound = document.getElementById("shootSound");
 
 let score = 0;
 let animation;
 let gameOver = false;
+let lives = 3;
+
+// =================== CARREGAR IMAGENS ===================
+const playerImg = new Image();
+playerImg.src = "../img/nave1.png"; // nave do jogador
+
+const enemyImg = new Image();
+enemyImg.src = "https://i.ibb.co/4m5TbyV/enemy.png"; // nave inimiga
+
+const lifeImg = new Image();
+lifeImg.src = "https://i.ibb.co/w4PLtdC/heart.png"; // ícone vida
+
+const fireImg = new Image();
+fireImg.src = "https://i.ibb.co/1nYz0zv/powerup-fire.png"; // power-up tiro rápido
+
+const doubleImg = new Image();
+doubleImg.src = "https://i.ibb.co/R09GfXj/powerup-double.png"; // power-up tiro duplo
 
 // =================== FUNDO ESTRELADO ===================
 let stars = [];
@@ -40,21 +58,20 @@ function drawStars() {
 let player = {
   x: canvas.width / 2,
   y: canvas.height - 100,
-  size: 40
+  size: 60
 };
 
 function drawPlayer() {
-  ctx.fillStyle = "cyan";
-  ctx.beginPath();
-  ctx.moveTo(player.x, player.y);
-  ctx.lineTo(player.x - player.size / 2, player.y + player.size);
-  ctx.lineTo(player.x + player.size / 2, player.y + player.size);
-  ctx.closePath();
-  ctx.fill();
+  ctx.drawImage(playerImg, player.x - player.size/2, player.y - player.size/2, player.size, player.size);
 }
 
 // =================== TIROS DO JOGADOR ===================
 let bullets = [];
+let shootCooldown = 400; // tempo entre tiros (ms)
+let lastShot = 0;
+let doubleShot = false;
+let rapidFire = false;
+
 function drawBullets() {
   ctx.fillStyle = "yellow";
   bullets.forEach((b, i) => {
@@ -65,7 +82,17 @@ function drawBullets() {
 }
 
 function shoot() {
-  bullets.push({ x: player.x, y: player.y });
+  const now = Date.now();
+  if (now - lastShot < shootCooldown) return;
+  lastShot = now;
+
+  bullets.push({ x: player.x, y: player.y - player.size/2 });
+
+  if (doubleShot) {
+    bullets.push({ x: player.x - 15, y: player.y - player.size/2 });
+    bullets.push({ x: player.x + 15, y: player.y - player.size/2 });
+  }
+
   shootSound.currentTime = 0;
   shootSound.play();
 }
@@ -76,21 +103,17 @@ function spawnEnemy() {
   enemies.push({
     x: Math.random() * (canvas.width - 40) + 20,
     y: -40,
-    size: 30,
+    size: 50,
     speed: 2,
-    canShoot: Math.random() < 0.5 // 50% chance de atirar
+    canShoot: Math.random() < 0.5
   });
 }
 
 function drawEnemies() {
-  ctx.fillStyle = "red";
   enemies.forEach((e, i) => {
-    ctx.beginPath();
-    ctx.arc(e.x, e.y, e.size, 0, Math.PI * 2);
-    ctx.fill();
+    ctx.drawImage(enemyImg, e.x - e.size/2, e.y - e.size/2, e.size, e.size);
     e.y += e.speed;
 
-    // Atirar aleatoriamente
     if (e.canShoot && Math.random() < 0.005) {
       enemyBullets.push({ x: e.x, y: e.y });
     }
@@ -108,6 +131,48 @@ function drawEnemyBullets() {
     b.y += 6;
     if (b.y > canvas.height) enemyBullets.splice(i, 1);
   });
+}
+
+// =================== POWER-UPS ===================
+let powerups = [];
+function spawnPowerUp(x, y) {
+  const type = Math.floor(Math.random() * 3); // 0 = vida, 1 = tiro rápido, 2 = tiro duplo
+  let img, kind;
+  if (type === 0) { img = lifeImg; kind = "life"; }
+  if (type === 1) { img = fireImg; kind = "rapid"; }
+  if (type === 2) { img = doubleImg; kind = "double"; }
+
+  powerups.push({ x, y, size: 30, img, kind });
+}
+
+function drawPowerUps() {
+  powerups.forEach((p, i) => {
+    ctx.drawImage(p.img, p.x - p.size/2, p.y - p.size/2, p.size, p.size);
+    p.y += 2;
+    if (p.y > canvas.height) powerups.splice(i, 1);
+
+    // colisão nave x power-up
+    if (Math.hypot(p.x - player.x, p.y - player.y) < (p.size/2 + player.size/2)) {
+      applyPowerUp(p.kind);
+      powerups.splice(i, 1);
+    }
+  });
+}
+
+function applyPowerUp(kind) {
+  if (kind === "life") {
+    if (lives < 5) lives++;
+    livesEl.textContent = "❤️".repeat(lives);
+  }
+  if (kind === "rapid") {
+    rapidFire = true;
+    shootCooldown = 150;
+    setTimeout(() => { rapidFire = false; shootCooldown = 400; }, 10000);
+  }
+  if (kind === "double") {
+    doubleShot = true;
+    setTimeout(() => { doubleShot = false; }, 10000);
+  }
 }
 
 // =================== EXPLOSÕES ===================
@@ -128,14 +193,23 @@ function drawExplosions() {
 function checkCollisions() {
   enemies.forEach((e, ei) => {
     // colisão nave x inimigo
-    if (Math.hypot(e.x - player.x, e.y - player.y) < e.size + player.size / 2) {
-      endGame();
+    if (Math.hypot(e.x - player.x, e.y - player.y) < e.size/2 + player.size/2) {
+      damagePlayer();
+      enemies.splice(ei, 1);
+      explosions.push({ x: e.x, y: e.y, radius: 10, alpha: 1 });
     }
 
     // colisão tiro x inimigo
     bullets.forEach((b, bi) => {
-      if (b.x > e.x - e.size && b.x < e.x + e.size && b.y > e.y - e.size && b.y < e.y + e.size) {
+      if (b.x > e.x - e.size/2 && b.x < e.x + e.size/2 &&
+          b.y > e.y - e.size/2 && b.y < e.y + e.size/2) {
         explosions.push({ x: e.x, y: e.y, radius: 10, alpha: 1 });
+
+        // chance de soltar power-up (20%)
+        if (Math.random() < 0.2) {
+          spawnPowerUp(e.x, e.y);
+        }
+
         enemies.splice(ei, 1);
         bullets.splice(bi, 1);
         score++;
@@ -146,10 +220,18 @@ function checkCollisions() {
 
   // colisão tiro inimigo x nave
   enemyBullets.forEach((b, bi) => {
-    if (Math.abs(b.x - player.x) < player.size / 2 && Math.abs(b.y - player.y) < player.size) {
-      endGame();
+    if (Math.abs(b.x - player.x) < player.size/2 && Math.abs(b.y - player.y) < player.size/2) {
+      damagePlayer();
+      enemyBullets.splice(bi, 1);
     }
   });
+}
+
+// =================== VIDAS ===================
+function damagePlayer() {
+  lives--;
+  livesEl.textContent = "❤️".repeat(lives);
+  if (lives <= 0) endGame();
 }
 
 // =================== GAME OVER ===================
@@ -176,6 +258,7 @@ function gameLoop() {
   drawBullets();
   drawEnemies();
   drawEnemyBullets();
+  drawPowerUps();
   drawExplosions();
   checkCollisions();
   if (!gameOver) animation = requestAnimationFrame(gameLoop);
@@ -183,3 +266,5 @@ function gameLoop() {
 
 setInterval(spawnEnemy, 1500);
 gameLoop();
+
+

@@ -23,6 +23,16 @@ canvas {
   text-shadow: 0 0 10px cyan;
 }
 
+/* Vidas */
+#lives {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 22px;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
 /* Tela de Game Over */
 #gameOver {
   position: absolute;
