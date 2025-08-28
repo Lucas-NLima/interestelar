@@ -38,4 +38,15 @@ public function missao4($litrosOxi, $litrosAgua) {
     return "O gasto total foi: R$ " . number_format($gastoTotal, 2, ',', '.');
 }
 
+public function missao5($respostaUsuario) {
+    $respostaUsuario = strtolower(trim($respostaUsuario));
+    $respostaCorreta = "júpiter, netuno, saturno, urano";
+
+    if ($respostaUsuario == $respostaCorreta) {
+        return "Resposta correta, Parabéns !!";
+    } else {
+        return "Resposta incorreta. Tente novamente!";
+    }
+}
+
 } ?>

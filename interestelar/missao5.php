@@ -18,14 +18,24 @@
 
   <!-- seu conteúdo por cima do fundo -->
   <main class="conteudo">
-    <h1>Informe um número par, para liberar a informação sobre o planeta mais próximo do Sol</h1>
-    <h4>Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar o enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?.</h4>
+    <h1>Organize os planetas gasosos em ordem alfabética: Júpiter, Netuno, Saturno, Urano.</h1>
+    <h3></h3>
      <form class="resposta" method="POST">
         <input type="number" name="numero" required>
         <button class="neon" type="submit">Enviar</button>
     </form>
     
     <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $respostaUsuario = strtolower(trim($_POST['resposta'])); // valor que o usuário digitou
+    $respostaCorreta = "júpiter, netuno, saturno, urano";
+
+    if ($respostaUsuario == $respostaCorreta) {
+        echo "<h2>Resposta correta, Parabéns !!</h2>";
+    } else {
+        echo "<h2>Resposta incorreta. Tente novamente!</h2>";
+    }
+  }
     ?>
   
   </main>
