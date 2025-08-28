@@ -30,10 +30,10 @@
     $planeta = strtolower(trim($_POST['texto']));
 
     if ($planeta === 'vênus' || $planeta === 'venus') {
-        echo "<h2 style = 'green'>Correto! Vênus é conhecido como estrela d’alva.</h2>";
+        echo "<h2 style = 'color : green;'>✅ Correto! Vênus é conhecido como estrela d’alva.</h2>";
         echo"<button class = 'neon'><a href='missao3.php'>Próxima missão</a></button>";
     } else {
-        echo "<h2>❌ Resposta incorreta. Tente novamente! (34690)</h2>";
+        echo "<h2 style = 'color : red;'>❌ Resposta incorreta. Tente novamente! (34690)</h2>";
         echo "<table border='1'>
         <th>Enigma</th>
         <tr>
@@ -49,8 +49,8 @@
         <td> 8 = P </td>
         </tr>
         <tr>
-        <td> 9 = O </td>
-        <td> 0 = N </td>
+        <td> 9 = U </td>
+        <td> 0 = S </td>
         <td> 10 = X </td>
         <td> 11 = B </td>
         </table>";
