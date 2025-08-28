@@ -22,8 +22,6 @@
   </div>
 
   <script src="script.js"></script>
-
-
 <?php
 	spl_autoload_register(function($class) {
 		$file = __DIR__ . "/interestelar/" . $class . ".php";
@@ -46,6 +44,9 @@
 
     
 ?>
+
+
+
     
 </body>
 </html>

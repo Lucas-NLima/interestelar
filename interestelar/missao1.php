@@ -30,7 +30,7 @@
         $numero = $_POST['numero'];
 
         if ($numero % 2 == 0) {
-            echo "<h2 style='color: green;'>Mercúrio é o planeta mais próximo do Sol.</h2>";
+            echo "<h2 style='color: green;'>✅ Mercúrio é o planeta mais próximo do Sol.</h2>";
             
             // dispara a animação via JS
             echo "<script>
@@ -48,9 +48,14 @@
   <!-- 🚀 Tela de transição -->
   <div id="transition">
     <img src="../img/foguete.png" alt="Foguete" class="rocket">
-    <img src="../img/nebulosa.webp" alt="nebulosa" class="earth">
+    <img src="../img/nebulosa.webp" alt="Terra" class="earth">
   </div>
 
   <script src="script.js"></script>
+
+  <audio id="rocket-sound" src="foguete.mp3" preload="auto"></audio>
+<audio id="space-sound" src="espaço.mp3" preload="auto" loop></audio>
+
+
 </body>
 </html>

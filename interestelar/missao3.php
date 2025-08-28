@@ -30,7 +30,7 @@
     $senha = $_POST['senha'];
 
     if ($senha == 3) {
-        echo "<h2 style = 'color : green;'>Acesso liberado! Bem-vindo ao sistema.</h2>";
+        echo "<h2 style = 'color : green;'>✅ Acesso liberado! Bem-vindo ao sistema.</h2>";
          echo "<script>
               setTimeout(() => {
                 startTransition();
@@ -50,6 +50,11 @@
   </div>
   
   <script src="script3.js"></script>
+
+  
+  <audio id="rocket-sound" src="foguete.mp3" preload="auto"></audio>
+<audio id="space-sound" src="espaço.mp3" preload="auto" loop></audio>
+
   
 </body>
 </html>

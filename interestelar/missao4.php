@@ -41,10 +41,10 @@ Qual foi o gasto total?</h1>
     $respostaCorreta = $totalOxi + $totalAgua; // resultado certo = 16
 
     if ($respostaUsuario == $respostaCorreta) {
-        echo "<h2 style = 'color : green;'>Resposta correta, Parabéns !!</h2>";
+        echo "<h2 style = 'color : green;'>✅ Resposta correta, Parabéns !!</h2>";
             echo "<script>
               setTimeout(() => {
-                startTransition();
+                startTransition(); 
               }, 500);
             </script>";
     } else {
@@ -61,6 +61,11 @@ Qual foi o gasto total?</h1>
   </div>
   
   <script src="script4.js"></script>
+
+  
+  <audio id="rocket-sound" src="foguete.mp3" preload="auto"></audio>
+<audio id="space-sound" src="espaço.mp3" preload="auto" loop></audio>
+
   
 </body>
 </html>

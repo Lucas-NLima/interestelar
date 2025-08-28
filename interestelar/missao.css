@@ -276,6 +276,7 @@ button.neon:hover {
   transform: scale(0.5);
   transition: opacity 1s, transform 1s;
   z-index: 2; /* 🚀 sempre na frente */
+  border-radius: 150px;
 }
 
 @keyframes fly {
@@ -286,3 +287,5 @@ button.neon:hover {
 
 
 /* ---------------------------------------------------------------------------------------------------------------------------------------- */
+
+

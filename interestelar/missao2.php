@@ -75,6 +75,11 @@
   
   <script src="script2.js"></script>
 
+  
+  <audio id="rocket-sound" src="foguete.mp3" preload="auto"></audio>
+<audio id="space-sound" src="espaço.mp3" preload="auto" loop></audio>
+
+
 
 </body>
 </html>

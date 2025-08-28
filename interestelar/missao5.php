@@ -21,7 +21,7 @@
     <h1>Organize os planetas gasosos em ordem alfabética: Júpiter, Netuno, Saturno, Urano.</h1>
     <h3></h3>
      <form class="resposta" method="POST">
-        <input type="number" name="numero" required>
+        <input type="text" name="resposta" required>
         <button class="neon" type="submit">Enviar</button>
     </form>
     
@@ -31,14 +31,18 @@
     $respostaCorreta = "júpiter, netuno, saturno, urano";
 
     if ($respostaUsuario == $respostaCorreta) {
-        echo "<h2>Resposta correta, Parabéns !!</h2>";
+        echo "<h2 style='color: green;'>✅ Resposta correta, Parabéns !!</h2>";
     } else {
-        echo "<h2>Resposta incorreta. Tente novamente!</h2>";
+        echo "<h2 style = 'color : red;'>❌ Resposta incorreta. Tente novamente!</h2>";
     }
   }
     ?>
   
   </main>
+
+  
+
+
   
 </body>
 </html>
