@@ -19,16 +19,16 @@ const playerImg = new Image();
 playerImg.src = "../img/nave1.png"; // nave do jogador
 
 const enemyImg = new Image();
-enemyImg.src = "https://i.ibb.co/4m5TbyV/enemy.png"; // nave inimiga
+enemyImg.src = "../img/naveINIMIGA.png"; // nave inimiga
 
 const lifeImg = new Image();
-lifeImg.src = "https://i.ibb.co/w4PLtdC/heart.png"; // ícone vida
+lifeImg.src = "../img/vida.png"; // ícone vida
 
 const fireImg = new Image();
-fireImg.src = "https://i.ibb.co/1nYz0zv/powerup-fire.png"; // power-up tiro rápido
+fireImg.src = "../img/xp.png"; // power-up tiro rápido
 
 const doubleImg = new Image();
-doubleImg.src = "https://i.ibb.co/R09GfXj/powerup-double.png"; // power-up tiro duplo
+doubleImg.src = "../img/xpBlue.png"; // power-up tiro duplo
 
 // =================== FUNDO ESTRELADO ===================
 let stars = [];
