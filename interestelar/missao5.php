@@ -50,11 +50,13 @@
         $respostaUsuario = strtolower(trim($_POST['resposta']));
         $respostaCorreta = "júpiter, netuno, saturno, urano"; // ordem correta
 
-        if ($respostaUsuario === $respostaCorreta) {
-            echo "<h3 style='color:green;'>✅ Correto! A ordem alfabética é: Júpiter, Netuno, Saturno, Urano.</h3>";
-        } else {
-            echo "<h3 style='color:red;'>❌ Incorreto. Tente novamente!</h3>";
-        }
+    if ($respostaUsuario == $respostaCorreta) {
+        echo "<h2 style='color: green;'>✅ Resposta correta, Parabéns !!</h2>";
+        echo"<a href='minijogo.html'><button class='neon'>Jogar Mini Jogo</button></a>";
+        echo "Para atirar use a barra de espaço ou clique com o mouse(não é obrigatório) jogar";
+    } else {
+        echo "<h2 style = 'color : red;'>❌ Resposta incorreta. Tente novamente!</h2>";
     }
+  }
     ?>
 </main>
