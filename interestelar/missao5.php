@@ -32,6 +32,8 @@
 
     if ($respostaUsuario == $respostaCorreta) {
         echo "<h2 style='color: green;'>✅ Resposta correta, Parabéns !!</h2>";
+        echo"<a href='minijogo.html'><button class='neon'>Jogar Mini Jogo</button></a>";
+        echo "Para atirar use a barra de espaço ou clique com o mouse(não é obrigatório) jogar";
     } else {
         echo "<h2 style = 'color : red;'>❌ Resposta incorreta. Tente novamente!</h2>";
     }
