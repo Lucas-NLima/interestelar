@@ -52,8 +52,28 @@
 
     if ($respostaUsuario == $respostaCorreta) {
         echo "<h2 style='color: green;'>✅ Resposta correta, Parabéns !!</h2>";
-        echo"<a href='minijogo.html'><button class='neon'>Jogar Mini Jogo</button></a>";
-        echo "Para atirar use a barra de espaço ou clique com o mouse(não é obrigatório) jogar";
+        echo "<h3 style = 'color: gold;'> Você desbloqueou o mini jogo!</h3> . '<br>' ";
+        echo"<a href='minijogo.html'><button class='neon'>Jogar Mini Jogo</button></a>. <br>";
+        echo "Para atirar use a barra de espaço e para se movimentar as setas (não é obrigatório jogar)  . '<br>' ";
+        echo "<table border='1' style = 'color: gold;'>
+        <th>Instrução</th>
+        <tr>
+        <td> 🛡️ = shild(invencibilidade)</td>
+         </tr>
+
+        <tr>
+        <td> ❤️ = vida extra </td>
+        </tr>
+
+        <tr>
+        <td> ✨ = velocidade de tiro(quando é verde) </td>
+        </tr>
+
+        <tr>
+        <td> ✨ = tiro a mais (quando é azul) </td>
+        </tr>
+       
+        </table>";
     } else {
         echo "<h2 style = 'color : red;'>❌ Resposta incorreta. Tente novamente!</h2>";
     }

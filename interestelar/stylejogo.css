@@ -1,47 +1,88 @@
+/* =================== RESET E ESTILO BASE =================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  background: black;
+  font-family: Arial, sans-serif;
   overflow: hidden;
-}
-canvas {
-  display: block;
+  background: black;
+  height: 100vh;
+  width: 100vw;
 }
 
-/* Placar */
-#score {
+/* =================== CANVAS =================== */
+#game {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: black; /* Fundo negro, estrelas serão desenhadas pelo JS */
+}
+
+/* =================== HUD =================== */
+#score, #lives, #gameOver, #pauseBtn {
   position: absolute;
+  z-index: 10;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+  font-weight: bold;
+}
+
+/* Pontos no canto superior direito */
+#score {
   top: 10px;
   right: 20px;
-  font-size: 22px;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  color: white;
-  text-shadow: 0 0 10px cyan;
+  font-size: 24px;
 }
 
-/* Vidas */
+/* Vidas no canto superior esquerdo */
 #lives {
-  position: absolute;
   top: 10px;
   left: 20px;
-  font-size: 22px;
-  font-family: Arial, sans-serif;
-  color: white;
+  font-size: 24px;
 }
 
-/* Tela de Game Over */
+/* Game Over centralizado */
 #gameOver {
-  position: absolute;
-  top: 50%;
+  display: none;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 40px;
-  font-family: Arial, sans-serif;
+  font-size: 48px;
   color: red;
-  display: none;
   text-align: center;
+  line-height: 1.5;
+  text-shadow: 2px 2px 10px black;
+}
+
+/* Botão de pausa na parte inferior central */
+#pauseBtn {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  font-size: 20px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#pauseBtn:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* =================== POWER-UPS =================== */
+/* Se você quiser, podemos adicionar efeito de brilho nos power-ups */
+.powerup {
+  filter: drop-shadow(0 0 8px yellow);
+  transition: transform 0.2s;
+}
+
+.powerup:hover {
+  transform: scale(1.2);
 }
