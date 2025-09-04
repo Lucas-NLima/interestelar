@@ -42,9 +42,9 @@ if (!isset($_SESSION['pontos'])) {
 
   <main class="conteudo">
     
-  <h1>Explore os mistérios do cosmos e continue sua jornada. Cada resposta correta desbloqueia novas descobertas.</h1>
+  <h1  style="font-size: 2.5em;">Explore os mistérios do cosmos e continue sua jornada. Cada resposta correta desbloqueia novas descobertas.</h1>
 
-   <h2>Informe o nome do planeta que é conhecido como o “Planeta Vermelho”</h2>
+   <h2 style="font-size: 1.9em;">Informe o nome do planeta que é conhecido como o “Planeta Vermelho”</h2>
 
 
  <form class="resposta" method="POST">

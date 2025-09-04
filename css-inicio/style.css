@@ -34,13 +34,13 @@ canvas {
 }
 
 .Titulo1 h1 {
-  font-size: 3em;
+  font-size: 5em;
   margin-bottom: 10px;
   text-shadow: 0 0 10px #fff, 0 0 20px #0ff;
 }
 
 .Titulo1 p {
-  font-size: 1.2em;
+  font-size: 2em;
   margin-bottom: 20px;
 }
 
@@ -57,5 +57,10 @@ canvas {
 
 .Titulo1 button:hover {
   background: rgba(255, 255, 255, 0.5);
+}
+
+.h2{
+font-size: 2em;
+  text-shadow: 0 0 10px #fff, 0 0 20px rgb(255, 16, 16);
 }
 

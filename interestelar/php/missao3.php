@@ -40,9 +40,9 @@ if ($_SESSION['fase_atual'] < $fase_atual_pagina) {
 
   <main class="conteudo">
 
- <h1>A Terra, conhecida como o planeta azul, é o único que abriga vida, com oceanos, florestas e uma atmosfera rica em oxigênio. Desafie-se para avançar na missão.</h1>
+ <h1  style="font-size: 2.5em;">A Terra, conhecida como o planeta azul, é o único que abriga vida, com oceanos, florestas e uma atmosfera rica em oxigênio. Desafie-se para avançar na missão.</h1>
 
-    <h2>A senha é a posição da Terra no Sistema Solar (contando a partir do Sol)</h2>
+    <h2  style="font-size: 1.9em;">A senha é a posição da Terra no Sistema Solar (contando a partir do Sol)</h2>
 
     <form class="resposta" method="POST">
       <input type="number" name="senha" required> <br><br>

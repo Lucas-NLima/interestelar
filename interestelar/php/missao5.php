@@ -39,7 +39,7 @@ if ($_SESSION['fase_atual'] < $fase_atual_pagina) {
   </div>
 
   <main class="conteudo">
-    <h1>Organize os planetas gasosos em ordem alfabética:</h1>
+    <h1  style="font-size: 2.5em;">Organize os planetas gasosos em ordem alfabética:</h1>
 
     <form class="resposta" method="POST">
         <label>

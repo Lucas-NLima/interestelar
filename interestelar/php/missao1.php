@@ -41,9 +41,9 @@ if (!isset($_SESSION['pontos'])) {
   </div>
 
   <main class="conteudo">
-    <h1>Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar os enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?</h1>
+    <h1 style="font-size: 2.5em;">Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar os enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?</h1>
    
-    <h2>Informe um número par, para liberar a informação sobre o planeta mais próximo do Sol</h2>
+    <h2 style="font-size: 1.9em;">Informe um número par, para liberar a informação sobre o planeta mais próximo do Sol</h2>
 
        
 <form class="resposta" method="POST">

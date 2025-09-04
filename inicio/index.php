@@ -13,12 +13,14 @@
 
   <!-- Conteúdo por cima do fundo animado -->
   <div class="Titulo1">
-    <h1> Mistérios do sistema solar!!!</h1>
-    <p>Entre na nave para começar</p>
+    <h1>Interestelar</h1>
+    <h2 class="h2" >e os</h2>
+    <h2 class="h2"> Mistérios do sistema solar!!!</h2>
+    <p class="h2">Entre na nave para começar</p>
 
-<a href="../interestelar/php/missao1.php"><button>Iniciar...</button></a>
+<a href="../interestelar/php/missao1.php"><button class="but">Iniciar...</button></a>
 
-    <a href="mais-informacoes.html"><button>Mais informações</button></a>
+    <a href="mais-informacoes.html"><button class="but">Mais informações</button></a>
   </div>
 
   <script src="..//script-inicio/script.js"></script>
