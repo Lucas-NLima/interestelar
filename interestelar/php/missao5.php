@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+// Inicializa a fase atual e pontuação, se não existir
+if (!isset($_SESSION['fase_atual'])) {
+    $_SESSION['fase_atual'] = 1;
+}
+if (!isset($_SESSION['pontos'])) {
+    $_SESSION['pontos'] = 0;
+}
+
+// Bloqueia acesso se a fase atual for menor que esta missão
+$fase_atual_pagina = 5; // Missão 5
+if ($_SESSION['fase_atual'] < $fase_atual_pagina) {
+    header("Location: missao" . $_SESSION['fase_atual'] . ".php");
+    exit;
+}
+?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -16,9 +34,13 @@
     <div class="camada brilho"></div>
   </div>
 
-  <!-- seu conteúdo por cima do fundo -->
+  <div class="pontuacao">
+    Pontuação atual = <span id="pontos"><?php echo $_SESSION['pontos']; ?></span>
+  </div>
+
   <main class="conteudo">
     <h1>Organize os planetas gasosos em ordem alfabética:</h1>
+
     <form class="resposta" method="POST">
         <label>
             <input type="radio" name="resposta" value="júpiter, netuno, saturno, urano" required>
@@ -42,13 +64,11 @@
 
         <button class="neon" type="submit">Enviar</button>
     </form>
-    </body>
-</html>
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $respostaUsuario = strtolower(trim($_POST['resposta']));
-        $respostaCorreta = "júpiter, netuno, saturno, urano"; // ordem correta
+        $respostaCorreta = "júpiter, netuno, saturno, urano";
 
     if ($respostaUsuario == $respostaCorreta) {
         echo "<h2 style='color: green;'>✅ Resposta correta, Parabéns !!</h2>";

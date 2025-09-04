@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+// Inicializa a fase atual e pontuação, se não existir
+if (!isset($_SESSION['fase_atual'])) {
+    $_SESSION['fase_atual'] = 1;
+}
+if (!isset($_SESSION['pontos'])) {
+    $_SESSION['pontos'] = 0;
+}
+
+// Bloqueia acesso se a fase atual for menor que esta missão
+$fase_atual_pagina = 4; // Missão 4
+if ($_SESSION['fase_atual'] < $fase_atual_pagina) {
+    header("Location: missao" . $_SESSION['fase_atual'] . ".php");
+    exit;
+}
+?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -17,48 +35,52 @@
   </div>
 
   <div class="pontuacao">
-  Pontuação atual = <span id="pontos">20</span>
-</div>
+    Pontuação atual = <span id="pontos"><?php echo $_SESSION['pontos']; ?></span>
+  </div>
 
-  <!-- seu conteúdo por cima do fundo -->
   <main class="conteudo">
-    <h1>Um robô em Marte consumiu 3 litros de oxigênio (R$4 cada) e 2 litros de água (R$2 cada).
-Qual foi o gasto total?</h1>
-    <h3>Após deixar a Terra, sua nave atravessa o espaço e chega a Marte, o enigmático planeta vermelho. Frio e árido, ele guarda desertos imensos e o Monte Olimpo, a maior montanha do Sistema Solar. Agora, seus enigmas estarão ligados à exploração espacial e aos mistérios deste vizinho da Terra.</h3>
-     <form class="resposta" method="POST">
-        <input type="number" name="total" required>
-        <button class="neon" type="submit">Enviar</button>
+    <h1>Um robô em Marte consumiu 3 litros de oxigênio (R$4 cada) e 2 litros de água (R$2 cada). Qual foi o gasto total?</h1>
+
+    <form class="resposta" method="POST">
+      <input type="number" name="total" required> <br><br>
+      <button class="neon" type="submit">Enviar</button>
     </form>
-    
+
+        <h2>Após deixar a Terra, sua nave atravessa o espaço e chega a Marte, o enigmático planeta vermelho. Frio e árido, ele guarda desertos imensos e o Monte Olimpo, a maior montanha do Sistema Solar. Agora, seus enigmas estarão ligados à exploração espacial e aos mistérios deste vizinho da Terra.</h2>
+
+
     <?php
-   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $respostaUsuario = $_POST['total']; // valor que o usuário digitou
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $respostaUsuario = $_POST['total'];
 
-    $litrosOxi = 3;
-    $valorOxi = 4;
-    $litrosAgua = 2;
-    $valorAgua = 2;
+        $litrosOxi = 3;
+        $valorOxi = 4;
+        $litrosAgua = 2;
+        $valorAgua = 2;
 
-    $totalOxi = $litrosOxi * $valorOxi;
-    $totalAgua = $litrosAgua * $valorAgua;
+        $respostaCorreta = ($litrosOxi * $valorOxi) + ($litrosAgua * $valorAgua); // 16
 
-    $respostaCorreta = $totalOxi + $totalAgua; // resultado certo = 16
+        if ($respostaUsuario == $respostaCorreta) {
+            echo "<h2 style='color: green;'>✅ Resposta correta, Parabéns!</h2>";
 
-    if ($respostaUsuario == $respostaCorreta) {
-        echo "<h2 style = 'color : green;'>✅ Resposta correta, Parabéns !!</h2>";
-        echo "<p>🎯 Você ganhou +5 pontos!";
-         // dispara a animação via JS
+            // Adiciona 5 pontos
+            $_SESSION['pontos'] += 5;
+            echo "<p>🎯 Você ganhou +5 pontos! Pontuação atual: " . $_SESSION['pontos'] . "</p>";
+
+            // Desbloqueia a próxima fase
+            $_SESSION['fase_atual'] = max($_SESSION['fase_atual'], 5);
+
+            // Redireciona para a próxima missão após 2 segundos
             echo "<script>
-              setTimeout(() => {
-                startTransition(); 
-              }, 500);
+                setTimeout(() => {
+                    window.location.href = 'missao5.php';
+                }, 2000);
             </script>";
-    } else {
-        echo "<h2 style = 'color : red;'>❌ Senha incorreta. Tente novamente!</h2>";
+        } else {
+            echo "<h2 style='color: red;'>❌ Resposta incorreta. Tente novamente!</h2>";
+        }
     }
-}
     ?>
-  
   </main>
        <!-- 🚀 Tela de transição -->
    <div id="transition">
@@ -70,8 +92,6 @@ Qual foi o gasto total?</h1>
 
   
   <audio id="rocket-sound" src="foguete.mp3" preload="auto"></audio>
-<audio id="space-sound" src="espaço.mp3" preload="auto" loop></audio>
-
-  
+  <audio id="space-sound" src="espaço.mp3" preload="auto" loop></audio>
 </body>
 </html>

@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+// Define a fase atual do usuário, se ainda não existir
+if (!isset($_SESSION['fase_atual'])) {
+    $_SESSION['fase_atual'] = 1;
+}
+
+// Bloqueia acesso se a fase atual for menor que esta missão
+$fase_atual_pagina = 2; // Missão 2
+if ($_SESSION['fase_atual'] < $fase_atual_pagina) {
+    header("Location: missao" . $_SESSION['fase_atual'] . ".php");
+    exit;
+}
+
+// Inicializa pontuação se ainda não existir
+if (!isset($_SESSION['pontos'])) {
+    $_SESSION['pontos'] = 0;
+}
+?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -16,65 +36,51 @@
     <div class="camada brilho"></div>
   </div>
 
- <div class="pontuacao">
-  Pontuação atual = <span id="pontos">5</span>
-</div>
+  <div class="pontuacao">
+    Pontuação atual = <span id="pontos"><?php echo $_SESSION['pontos']; ?></span>
+  </div>
 
-
-
-  <!-- seu conteúdo por cima do fundo -->
   <main class="conteudo">
-    <h1>Qual é o planeta conhecido como estrela d’alva, visível ao amanhecer?</h1>
-    <h4>Ao  você encontra uma porta dourada com inscrições antigas. Para destrancá-la, você deve responder corretamente à pergunta dos antigos exploradores</h4>
-     <form class="resposta" method="POST">
-        <input type="text" name="texto" required>
-        <button class="neon" type="submit">Enviar</button>
+    <h1>Informe o nome do planeta que é conhecido como o “Planeta Vermelho”</h1>
+
+    <form class="resposta" method="POST">
+      <input type="text" name="planeta" required> <br><br>
+      <button class="neon" type="submit">Enviar</button>
     </form>
-    
+
+        <h2>Explore os mistérios do cosmos e continue sua jornada. Cada resposta correta desbloqueia novas descobertas.</h2>
+
+
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $planeta = strtolower(trim($_POST['texto']));
+        $planeta = strtolower(trim($_POST['planeta']));
 
-    if ($planeta === 'vênus' || $planeta === 'venus') {
-        echo "<h2 style = 'color : green;'>✅ Correto! Vênus é conhecido como estrela d’alva.</h2>";
-        echo "<p>🎯 Você ganhou +5 pontos!";
-         // dispara a animação via JS
+        // Resposta correta: "marte"
+        if ($planeta === "marte") {
+            echo "<h2 style='color: green;'>✅ Marte é o Planeta Vermelho.</h2>";
+
+            // Adiciona 5 pontos
+            $_SESSION['pontos'] += 5;
+
+            echo "<p>🎯 Você ganhou +5 pontos! Pontuação atual: " . $_SESSION['pontos'] . "</p>";
+
+            // Desbloqueia a próxima fase
+            $_SESSION['fase_atual'] = max($_SESSION['fase_atual'], 3);
+
+            // Redireciona para a próxima missão após 2 segundos
             echo "<script>
-              setTimeout(() => {
-                startTransition();
-              }, 500);
+                setTimeout(() => {
+                    window.location.href = 'missao3.php';
+                }, 2000);
             </script>";
-    } else {
-        echo "<h2 style = 'color : red;'>❌ Resposta incorreta. Tente novamente! (34690)</h2>";
-        echo "<table border='1'>
-        <th>Enigma</th>
-        <tr>
-        <td> 1 = A </td>
-        <td> 2 = C </td>
-        <td> 3 = V </td>
-        <td> 4 = E </td>
-        </tr>
-        <tr>
-        <td> 5 = F </td>
-        <td> 6 = N </td>
-        <td> 7 = Y </td>
-        <td> 8 = P </td>
-        </tr>
-        <tr>
-        <td> 9 = U </td>
-        <td> 0 = S </td>
-        <td> 10 = X </td>
-        <td> 11 = B </td>
-        </table>";
-        
-} 
-
-     }
+        } else {
+            echo "<h2 style='color: red;'>❌ Resposta incorreta. Tente novamente!</h2>";
+        }
+    }
     ?>
-  
   </main>
 
-    <!-- 🚀 Tela de transição -->
+  <!-- 🚀 Tela de transição -->
   <div id="transition">
     <img src="../../img/foguete.png" alt="Foguete" class="rocket">
     <img src="../../img/venus.png" alt="Terra" class="earth">
@@ -84,14 +90,6 @@
 
   
   <audio id="rocket-sound" src="foguete.mp3" preload="auto"></audio>
-<audio id="space-sound" src="espaço.mp3" preload="auto" loop></audio>
-
-
-
+  <audio id="space-sound" src="espaço.mp3" preload="auto" loop></audio>
 </body>
 </html>
-
-
-
-
-
