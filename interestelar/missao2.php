@@ -42,12 +42,14 @@ if (!isset($_SESSION['pontos'])) {
 
   <main class="conteudo">
     <h1>Informe o nome do planeta que é conhecido como o “Planeta Vermelho”</h1>
-    <h4>Explore os mistérios do cosmos e continue sua jornada. Cada resposta correta desbloqueia novas descobertas.</h4>
 
     <form class="resposta" method="POST">
-      <input type="text" name="planeta" required>
+      <input type="text" name="planeta" required> <br><br>
       <button class="neon" type="submit">Enviar</button>
     </form>
+
+        <h2>Explore os mistérios do cosmos e continue sua jornada. Cada resposta correta desbloqueia novas descobertas.</h2>
+
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

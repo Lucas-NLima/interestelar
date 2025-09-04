@@ -40,12 +40,14 @@ if ($_SESSION['fase_atual'] < $fase_atual_pagina) {
 
   <main class="conteudo">
     <h1>A senha é a posição da Terra no Sistema Solar (contando a partir do Sol)</h1>
-    <h4>A Terra, conhecida como o planeta azul, é o único que abriga vida, com oceanos, florestas e uma atmosfera rica em oxigênio. Desafie-se para avançar na missão.</h4>
 
     <form class="resposta" method="POST">
-      <input type="number" name="senha" required>
+      <input type="number" name="senha" required> <br><br>
       <button class="neon" type="submit">Enviar</button>
     </form>
+
+        <h2>A Terra, conhecida como o planeta azul, é o único que abriga vida, com oceanos, florestas e uma atmosfera rica em oxigênio. Desafie-se para avançar na missão.</h2>
+
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

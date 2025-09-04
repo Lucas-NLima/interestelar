@@ -40,12 +40,14 @@ if ($_SESSION['fase_atual'] < $fase_atual_pagina) {
 
   <main class="conteudo">
     <h1>Um robô em Marte consumiu 3 litros de oxigênio (R$4 cada) e 2 litros de água (R$2 cada). Qual foi o gasto total?</h1>
-    <h3>Após deixar a Terra, sua nave atravessa o espaço e chega a Marte, o enigmático planeta vermelho. Frio e árido, ele guarda desertos imensos e o Monte Olimpo, a maior montanha do Sistema Solar. Agora, seus enigmas estarão ligados à exploração espacial e aos mistérios deste vizinho da Terra.</h3>
 
     <form class="resposta" method="POST">
-      <input type="number" name="total" required>
+      <input type="number" name="total" required> <br><br>
       <button class="neon" type="submit">Enviar</button>
     </form>
+
+        <h2>Após deixar a Terra, sua nave atravessa o espaço e chega a Marte, o enigmático planeta vermelho. Frio e árido, ele guarda desertos imensos e o Monte Olimpo, a maior montanha do Sistema Solar. Agora, seus enigmas estarão ligados à exploração espacial e aos mistérios deste vizinho da Terra.</h2>
+
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

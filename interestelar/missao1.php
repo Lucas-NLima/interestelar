@@ -42,12 +42,14 @@ if (!isset($_SESSION['pontos'])) {
 
   <main class="conteudo">
     <h1>Informe um número par, para liberar a informação sobre o planeta mais próximo do Sol</h1>
-    <h4>Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar os enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?</h4>
 
     <form class="resposta" method="POST">
-      <input type="number" name="numero" required>
+      <input type="number" name="numero" required> <br><br>
       <button class="neon" type="submit">Enviar</button>
     </form>
+
+        <h2>Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar os enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?</h2>
+
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
