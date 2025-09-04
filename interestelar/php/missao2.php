@@ -41,14 +41,16 @@ if (!isset($_SESSION['pontos'])) {
   </div>
 
   <main class="conteudo">
-    <h1>Informe o nome do planeta que é conhecido como o “Planeta Vermelho”</h1>
+    
+  <h1>Explore os mistérios do cosmos e continue sua jornada. Cada resposta correta desbloqueia novas descobertas.</h1>
 
-    <form class="resposta" method="POST">
+   <h2>Informe o nome do planeta que é conhecido como o “Planeta Vermelho”</h2>
+
+
+ <form class="resposta" method="POST">
       <input type="text" name="planeta" required> <br><br>
       <button class="neon" type="submit">Enviar</button>
-    </form>
-
-        <h2>Explore os mistérios do cosmos e continue sua jornada. Cada resposta correta desbloqueia novas descobertas.</h2>
+ </form>
 
 
     <?php
@@ -69,9 +71,9 @@ if (!isset($_SESSION['pontos'])) {
 
             // Redireciona para a próxima missão após 2 segundos
             echo "<script>
-                setTimeout(() => {
-                    window.location.href = 'missao3.php';
-                }, 2000);
+              setTimeout(() => {
+                startTransition();
+              }, 2000);
             </script>";
         } else {
             echo "<h2 style='color: red;'>❌ Resposta incorreta. Tente novamente!</h2>";
@@ -89,7 +91,7 @@ if (!isset($_SESSION['pontos'])) {
   <script src="../script/script2.js"></script>
 
   
-  <audio id="rocket-sound" src="foguete.mp3" preload="auto"></audio>
-  <audio id="space-sound" src="espaço.mp3" preload="auto" loop></audio>
+ <audio id="rocket-sound" src="../som/foguete.mp3" preload="auto"></audio>
+  <audio id="space-sound" src="../som/espaço.mp3" preload="auto" loop></audio>
 </body>
 </html>

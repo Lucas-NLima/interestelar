@@ -39,14 +39,17 @@ if ($_SESSION['fase_atual'] < $fase_atual_pagina) {
   </div>
 
   <main class="conteudo">
-    <h1>Um robô em Marte consumiu 3 litros de oxigênio (R$4 cada) e 2 litros de água (R$2 cada). Qual foi o gasto total?</h1>
+
+   <h1>Após deixar a Terra, sua nave atravessa o espaço e chega a Marte, o enigmático planeta vermelho. Frio e árido, ele guarda desertos imensos e o Monte Olimpo, a maior montanha do Sistema Solar. Agora, seus enigmas estarão ligados à exploração espacial e aos mistérios deste vizinho da Terra.</h1>
+
+    <h2>Um robô em Marte consumiu 3 litros de oxigênio (R$4 cada) e 2 litros de água (R$2 cada). Qual foi o gasto total?</h2>
 
     <form class="resposta" method="POST">
       <input type="number" name="total" required> <br><br>
       <button class="neon" type="submit">Enviar</button>
     </form>
 
-        <h2>Após deixar a Terra, sua nave atravessa o espaço e chega a Marte, o enigmático planeta vermelho. Frio e árido, ele guarda desertos imensos e o Monte Olimpo, a maior montanha do Sistema Solar. Agora, seus enigmas estarão ligados à exploração espacial e aos mistérios deste vizinho da Terra.</h2>
+       
 
 
     <?php
@@ -72,9 +75,9 @@ if ($_SESSION['fase_atual'] < $fase_atual_pagina) {
 
             // Redireciona para a próxima missão após 2 segundos
             echo "<script>
-                setTimeout(() => {
-                    window.location.href = 'missao5.php';
-                }, 2000);
+              setTimeout(() => {
+                startTransition();
+              }, 2000);
             </script>";
         } else {
             echo "<h2 style='color: red;'>❌ Resposta incorreta. Tente novamente!</h2>";
@@ -91,7 +94,7 @@ if ($_SESSION['fase_atual'] < $fase_atual_pagina) {
   <script src="../script/script4.js"></script>
 
   
-  <audio id="rocket-sound" src="foguete.mp3" preload="auto"></audio>
-  <audio id="space-sound" src="espaço.mp3" preload="auto" loop></audio>
+  <audio id="rocket-sound" src="../som/foguete.mp3" preload="auto"></audio>
+  <audio id="space-sound" src="../som/espaço.mp3" preload="auto" loop></audio>
 </body>
 </html>

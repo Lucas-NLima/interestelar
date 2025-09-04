@@ -24,7 +24,7 @@ if (!isset($_SESSION['pontos'])) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="../missao.css" />
-  <title>Missão Galáxia</title>
+  <title>Missão1 </title>
 </head>
 <body>
   <div class="galaxia">
@@ -42,15 +42,14 @@ if (!isset($_SESSION['pontos'])) {
 
   <main class="conteudo">
     <h1>Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar os enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?</h1>
-    <h4>Informe um número par, para liberar a informação sobre o planeta mais próximo do Sol</h4>
+   
+    <h2>Informe um número par, para liberar a informação sobre o planeta mais próximo do Sol</h2>
 
-    <form class="resposta" method="POST">
+       
+<form class="resposta" method="POST">
       <input type="number" name="numero" required> <br><br>
       <button class="neon" type="submit">Enviar</button>
     </form>
-
-        <h2>Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar os enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?</h2>
-
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -68,10 +67,10 @@ if (!isset($_SESSION['pontos'])) {
             $_SESSION['fase_atual'] = max($_SESSION['fase_atual'], 2);
 
             // Redireciona para a próxima missão após 2 segundos
-            echo "<script>
-                setTimeout(() => {
-                    window.location.href = 'missao2.php';
-                }, 2000);
+            echo"<script>
+              setTimeout(() => {
+                startTransition();
+              }, 2000);
             </script>";
         } else {
             echo "<h2 style='color: red;'>❌ Por favor, insira um número par.</h2>";
@@ -88,7 +87,7 @@ if (!isset($_SESSION['pontos'])) {
 
   <script src="../script/script.js"></script>
 
-  <audio id="rocket-sound" src="foguete.mp3" preload="auto"></audio>
-  <audio id="space-sound" src="espaço.mp3" preload="auto" loop></audio>
+  <audio id="rocket-sound" src="../som/foguete.mp3" preload="auto"></audio>
+  <audio id="space-sound" src="../som/espaço.mp3" preload="auto" loop></audio>
 </body>
 </html>

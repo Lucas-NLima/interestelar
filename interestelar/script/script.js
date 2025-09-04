@@ -1,3 +1,4 @@
+
 function startTransition() {
   const transition = document.getElementById("transition");
   const rocket = document.querySelector(".rocket");
@@ -30,6 +31,6 @@ function startTransition() {
   // redireciona depois da animação
   setTimeout(() => {
     spaceSound.pause(); // para o som do espaço antes de trocar
-    window.location.href = "missao2.php";
+    window.location.href = "../php/missao2.php";
   }, 4500);
 }

@@ -27,25 +27,25 @@ document.getElementById("pauseBtn").addEventListener("click", () => {
 
 // =================== CARREGAR IMAGENS ===================
 const playerImg = new Image();
-playerImg.src = "../img/nave1.png";
+playerImg.src = "../../img/nave1.png";
 
 const enemyImg = new Image();
-enemyImg.src = "../img/naveINIMIGA.png";
+enemyImg.src = "../../img/naveINIMIGA.png";
 
 const lifeImg = new Image();
-lifeImg.src = "../img/vida.png";
+lifeImg.src = "../../img/vida.png";
 
 const fireImg = new Image();
-fireImg.src = "../img/xp.png";
+fireImg.src = "../../img/xp.png";
 
 const doubleImg = new Image();
-doubleImg.src = "../img/xpBlue.png";
+doubleImg.src = "../../img/xpBlue.png";
 
 const bossImg = new Image();
-bossImg.src = "../img/boss.png";
+bossImg.src = "../../img/boss.png";
 
 const shieldImg = new Image();
-shieldImg.src = "../img/shield.png"; 
+shieldImg.src = "../../img/shield.png"; 
 
 // =================== FUNDO ESTRELADO ===================
 let stars = [];
@@ -101,7 +101,7 @@ let rapidFire = false;
 function drawBullets() {
   for (let i = bullets.length - 1; i >= 0; i--) {
     const b = bullets[i];
-    ctx.fillStyle = "yellow";
+    ctx.fillStyle = "blue";
     ctx.fillRect(b.x - 2, b.y, 4, 10);
     b.y -= 8;
     if (b.y < 0) bullets.splice(i, 1);

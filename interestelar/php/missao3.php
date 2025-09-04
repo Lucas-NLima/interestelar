@@ -39,14 +39,17 @@ if ($_SESSION['fase_atual'] < $fase_atual_pagina) {
   </div>
 
   <main class="conteudo">
-    <h1>A senha é a posição da Terra no Sistema Solar (contando a partir do Sol)</h1>
+
+ <h1>A Terra, conhecida como o planeta azul, é o único que abriga vida, com oceanos, florestas e uma atmosfera rica em oxigênio. Desafie-se para avançar na missão.</h1>
+
+    <h2>A senha é a posição da Terra no Sistema Solar (contando a partir do Sol)</h2>
 
     <form class="resposta" method="POST">
       <input type="number" name="senha" required> <br><br>
       <button class="neon" type="submit">Enviar</button>
     </form>
 
-        <h2>A Terra, conhecida como o planeta azul, é o único que abriga vida, com oceanos, florestas e uma atmosfera rica em oxigênio. Desafie-se para avançar na missão.</h2>
+       
 
 
     <?php
@@ -65,9 +68,9 @@ if ($_SESSION['fase_atual'] < $fase_atual_pagina) {
 
             // Redireciona para a próxima missão após 2 segundos
             echo "<script>
-                setTimeout(() => {
-                    window.location.href = 'missao4.php';
-                }, 2000);
+              setTimeout(() => {
+                startTransition();
+              }, 2000);
             </script>";
         } else {
             echo "<h2 style='color: red;'>❌ Senha incorreta. Tente novamente!</h2>";
@@ -85,7 +88,7 @@ if ($_SESSION['fase_atual'] < $fase_atual_pagina) {
   <script src="../script/script3.js"></script>
 
   
-  <audio id="rocket-sound" src="foguete.mp3" preload="auto"></audio>
-  <audio id="space-sound" src="espaço.mp3" preload="auto" loop></audio>
+  <audio id="rocket-sound" src="../som/foguete.mp3" preload="auto"></audio>
+  <audio id="space-sound" src="../som/espaço.mp3" preload="auto" loop></audio>
 </body>
 </html>
