@@ -4,3 +4,7 @@ Ao clicar em iniciar, o desafio começa, você terá que responder corretamente 
 Após responder todas as questões apresentara sua pontuação final, mas não pense que é o fim, desenvolvemos um jogo, ao final da missão 5 possui o tutorial de como jogar
 
   a execução do mini-jogo não é obrigatório, mas pedimos encarecidamente que entrem para avaliar, foi feito com muito carinho e elaboração, a jogabilidade é fácil, se inicia com 3 vidas, basicamente se deve eliminar a maior quantidade de inimigos, recolher os poderes que alguns soltam, e ao chegar a 30 pontos um boss aparecera para defender os seus, elimine o chefão, continue sobrevivendo o máximo que puder.
+  (criadores:
+  Lucas e Murilo: fizeram o código.
+  Kaylayne: esquematizou as missões.
+  Ana Laura e Manuella: Esquematizaram o designe.
