@@ -1,10 +1,28 @@
+<?php
+session_start();
+
+// Inicializa a fase atual e pontuação, se não existir
+if (!isset($_SESSION['fase_atual'])) {
+    $_SESSION['fase_atual'] = 1;
+}
+if (!isset($_SESSION['pontos'])) {
+    $_SESSION['pontos'] = 0;
+}
+
+// Bloqueia acesso se a fase atual for menor que esta missão
+$fase_atual_pagina = 5; // Missão 5
+if ($_SESSION['fase_atual'] < $fase_atual_pagina) {
+    header("Location: missao" . $_SESSION['fase_atual'] . ".php");
+    exit;
+}
+?>
 <!doctype html>
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="missao.css" />
-  <title>Fundo Galáxia (CSS-only)</title>
+  <title>Missão Galáxia - Missão 5</title>
 </head>
 <body>
   <div class="galaxia">
@@ -16,9 +34,13 @@
     <div class="camada brilho"></div>
   </div>
 
-  <!-- seu conteúdo por cima do fundo -->
+  <div class="pontuacao">
+    Pontuação atual = <span id="pontos"><?php echo $_SESSION['pontos']; ?></span>
+  </div>
+
   <main class="conteudo">
     <h1>Organize os planetas gasosos em ordem alfabética:</h1>
+
     <form class="resposta" method="POST">
         <label>
             <input type="radio" name="resposta" value="júpiter, netuno, saturno, urano" required>
@@ -42,43 +64,40 @@
 
         <button class="neon" type="submit">Enviar</button>
     </form>
-    </body>
-</html>
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $respostaUsuario = strtolower(trim($_POST['resposta']));
-        $respostaCorreta = "júpiter, netuno, saturno, urano"; // ordem correta
+        $respostaCorreta = "júpiter, netuno, saturno, urano";
 
-    if ($respostaUsuario == $respostaCorreta) {
-        echo "<h2 style='color: green;'>✅ Resposta correta, Parabéns !!</h2>";
-        echo "<p>🎯 Você ganhou +5 pontos!";
-        echo "<p>🥳 Sua pontuação final foi de 25 pontos !!";
-        echo "<h3 style = 'color: gold;'> Você desbloqueou o mini jogo!</h3> . '<br>' ";
-        echo"<a href='minijogo.html'><button class='neon'>Jogar Mini Jogo</button></a>. <br>";
-        echo "Para atirar use a barra de espaço e para se movimentar as setas (não é obrigatório jogar)  . '<br>' ";
-        echo "<table border='1' style = 'color: gold;'>
-        <th>Instrução</th>
-        <tr>
-        <td> 🛡️ = shild(invencibilidade)</td>
-         </tr>
+        if ($respostaUsuario == $respostaCorreta) {
+            echo "<h2 style='color: green;'>✅ Resposta correta, Parabéns !!</h2>";
 
-        <tr>
-        <td> ❤️ = vida extra </td>
-        </tr>
+            // Adiciona 5 pontos
+            $_SESSION['pontos'] += 5;
+            echo "<p>🎯 Você ganhou +5 pontos! Pontuação atual: " . $_SESSION['pontos'] . "</p>";
+            echo "<p>🥳 Sua pontuação final foi de " . $_SESSION['pontos'] . " pontos !!</p>";
 
-        <tr>
-        <td> ✨ (verde) = velocidade de tiro </td>
-        </tr>
+            // Desbloqueia a fase final (ou mini-jogo)
+            $_SESSION['fase_atual'] = max($_SESSION['fase_atual'], 6);
 
-        <tr>
-        <td> ✨ (azul) = tiros triplos </td>
-        </tr>
-       
-        </table>";
-    } else {
-        echo "<h2 style = 'color : red;'>❌ Resposta incorreta. Tente novamente!</h2>";
+            echo "<h3 style='color: gold;'>Você desbloqueou o mini jogo!</h3>";
+            echo "<a href='minijogo.html'><button class='neon'>Jogar Mini Jogo</button></a><br>";
+            echo "Para atirar use a barra de espaço e para se movimentar as setas (não é obrigatório jogar).<br>";
+
+            echo "<table border='1' style='color: gold;'>
+                    <tr><th>Instrução</th></tr>
+                    <tr><td>🛡️ = shild (invencibilidade)</td></tr>
+                    <tr><td>❤️ = vida extra</td></tr>
+                    <tr><td>✨ (verde) = velocidade de tiro</td></tr>
+                    <tr><td>✨ (azul) = tiros triplos</td></tr>
+                  </table>";
+
+        } else {
+            echo "<h2 style='color: red;'>❌ Resposta incorreta. Tente novamente!</h2>";
+        }
     }
-  }
     ?>
-</main>
+  </main>
+</body>
+</html>
