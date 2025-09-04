@@ -52,6 +52,8 @@
 
     if ($respostaUsuario == $respostaCorreta) {
         echo "<h2 style='color: green;'>✅ Resposta correta, Parabéns !!</h2>";
+        echo "<p>🎯 Você ganhou +5 pontos!";
+        echo "<p>🥳 Sua pontuação final foi de 25 pontos !!";
         echo "<h3 style = 'color: gold;'> Você desbloqueou o mini jogo!</h3> . '<br>' ";
         echo"<a href='minijogo.html'><button class='neon'>Jogar Mini Jogo</button></a>. <br>";
         echo "Para atirar use a barra de espaço e para se movimentar as setas (não é obrigatório jogar)  . '<br>' ";
@@ -66,11 +68,11 @@
         </tr>
 
         <tr>
-        <td> ✨ = velocidade de tiro(quando é verde) </td>
+        <td> ✨ (verde) = velocidade de tiro </td>
         </tr>
 
         <tr>
-        <td> ✨ = tiro a mais (quando é azul) </td>
+        <td> ✨ (azul) = tiros triplos </td>
         </tr>
        
         </table>";

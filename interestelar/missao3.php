@@ -16,6 +16,10 @@
     <div class="camada brilho"></div>
   </div>
 
+ <div class="pontuacao">
+  Pontuação atual = <span id="pontos">15</span>
+</div>
+
   <!-- seu conteúdo por cima do fundo -->
   <main class="conteudo">
     <h1>A senha é a posição da Terra no Sistema Solar (contando a partir do Sol)</h1>
@@ -31,6 +35,8 @@
 
     if ($senha == 3) {
         echo "<h2 style = 'color : green;'>✅ Acesso liberado! Bem-vindo ao sistema.</h2>";
+        echo "<p>🎯 Você ganhou +5 pontos!";
+         // dispara a animação via JS
          echo "<script>
               setTimeout(() => {
                 startTransition();

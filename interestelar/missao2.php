@@ -16,6 +16,12 @@
     <div class="camada brilho"></div>
   </div>
 
+ <div class="pontuacao">
+  Pontuação atual = <span id="pontos">5</span>
+</div>
+
+
+
   <!-- seu conteúdo por cima do fundo -->
   <main class="conteudo">
     <h1>Qual é o planeta conhecido como estrela d’alva, visível ao amanhecer?</h1>
@@ -30,7 +36,8 @@
     $planeta = strtolower(trim($_POST['texto']));
 
     if ($planeta === 'vênus' || $planeta === 'venus') {
-        echo "<h2 style = 'color : green;'>✅ Correto! Vênus é conhecido como estrela d’alva.</h2>";;
+        echo "<h2 style = 'color : green;'>✅ Correto! Vênus é conhecido como estrela d’alva.</h2>";
+        echo "<p>🎯 Você ganhou +5 pontos!";
          // dispara a animação via JS
             echo "<script>
               setTimeout(() => {

@@ -16,6 +16,10 @@
     <div class="camada brilho"></div>
   </div>
 
+  <div class="pontuacao">
+  Pontuação atual = <span id="pontos">20</span>
+</div>
+
   <!-- seu conteúdo por cima do fundo -->
   <main class="conteudo">
     <h1>Um robô em Marte consumiu 3 litros de oxigênio (R$4 cada) e 2 litros de água (R$2 cada).
@@ -42,6 +46,8 @@ Qual foi o gasto total?</h1>
 
     if ($respostaUsuario == $respostaCorreta) {
         echo "<h2 style = 'color : green;'>✅ Resposta correta, Parabéns !!</h2>";
+        echo "<p>🎯 Você ganhou +5 pontos!";
+         // dispara a animação via JS
             echo "<script>
               setTimeout(() => {
                 startTransition(); 

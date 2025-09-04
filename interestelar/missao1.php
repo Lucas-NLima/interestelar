@@ -16,6 +16,10 @@
     <div class="camada brilho"></div>
   </div>
 
+ <div class="pontuacao">
+  Pontuação atual = <span id="pontos">0</span>
+</div>
+
   <main class="conteudo">
     <h1>Informe um número par, para liberar a informação sobre o planeta mais próximo do Sol</h1>
     <h4>Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar os enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?</h4>
@@ -30,9 +34,10 @@
         $numero = $_POST['numero'];
 
         if ($numero % 2 == 0) {
+
             echo "<h2 style='color: green;'>✅ Mercúrio é o planeta mais próximo do Sol.</h2>";
-            
-            // dispara a animação via JS
+            echo "<p>🎯 Você ganhou +5 pontos!";
+
             echo "<script>
               setTimeout(() => {
                 startTransition();
@@ -54,8 +59,6 @@
   <script src="script.js"></script>
 
   <audio id="rocket-sound" src="foguete.mp3" preload="auto"></audio>
-<audio id="space-sound" src="espaço.mp3" preload="auto" loop></audio>
-
-
+  <audio id="space-sound" src="espaço.mp3" preload="auto" loop></audio>
 </body>
 </html>
