@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="missao.css" />
+  <link rel="stylesheet" href="../missao.css" />
   <title>Missão Galáxia</title>
 </head>
 <body>
@@ -21,8 +21,8 @@
 </div>
 
   <main class="conteudo">
-    <h1>Informe um número par, para liberar a informação sobre o planeta mais próximo do Sol</h1>
-    <h4>Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar os enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?</h4>
+    <h1>Sua nave acabou de aterrissar em um planeta desconhecido. Para explorar este novo mundo, você precisa desvendar os enigmas deixados pelos antigos habitantes. Cada resposta correta abrirá portas e revelará segredos do cosmos. Está pronto para o desafio?</h1>
+    <h4>Informe um número par, para liberar a informação sobre o planeta mais próximo do Sol</h4>
 
     <form class="resposta" method="POST">
       <input type="number" name="numero" required>
@@ -52,11 +52,11 @@
 
   <!-- 🚀 Tela de transição -->
   <div id="transition">
-    <img src="../img/foguete.png" alt="Foguete" class="rocket">
-    <img src="../img/nebulosa.webp" alt="Terra" class="earth">
+    <img src="../../img/foguete.png" alt="Foguete" class="rocket">
+    <img src="../../img/nebulosa.webp" alt="Terra" class="earth">
   </div>
 
-  <script src="script.js"></script>
+  <script src="../script/script.js"></script>
 
   <audio id="rocket-sound" src="foguete.mp3" preload="auto"></audio>
   <audio id="space-sound" src="espaço.mp3" preload="auto" loop></audio>

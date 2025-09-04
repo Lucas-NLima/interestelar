@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="missao.css" />
+  <link rel="stylesheet" href="../missao.css" />
   <title>Fundo Galáxia (CSS-only)</title>
 </head>
 <body>
@@ -62,11 +62,11 @@ Qual foi o gasto total?</h1>
   </main>
        <!-- 🚀 Tela de transição -->
    <div id="transition">
-    <img src="../img/foguete.png" alt="Foguete" class="rocket">
-    <img src="../img/marte.png" alt="Terra" class="earth">
+    <img src="../../img/foguete.png" alt="Foguete" class="rocket">
+    <img src="../../img/marte.png" alt="Terra" class="earth">
   </div>
   
-  <script src="script4.js"></script>
+  <script src="../script/script4.js"></script>
 
   
   <audio id="rocket-sound" src="foguete.mp3" preload="auto"></audio>

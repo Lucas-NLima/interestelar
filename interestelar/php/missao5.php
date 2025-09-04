@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="missao.css" />
+  <link rel="stylesheet" href="../missao.css" />
   <title>Fundo Galáxia (CSS-only)</title>
 </head>
 <body>
@@ -55,7 +55,7 @@
         echo "<p>🎯 Você ganhou +5 pontos!";
         echo "<p>🥳 Sua pontuação final foi de 25 pontos !!";
         echo "<h3 style = 'color: gold;'> Você desbloqueou o mini jogo!</h3> . '<br>' ";
-        echo"<a href='minijogo.html'><button class='neon'>Jogar Mini Jogo</button></a>. <br>";
+        echo"<a href='../minijogo/minijogo.html'><button class='neon'>Jogar Mini Jogo</button></a>. <br>";
         echo "Para atirar use a barra de espaço e para se movimentar as setas (não é obrigatório jogar)  . '<br>' ";
         echo "<table border='1' style = 'color: gold;'>
         <th>Instrução</th>
@@ -81,4 +81,6 @@
     }
   }
     ?>
+
+    <a href="bibliografia.php"><button></button></a>
 </main>
